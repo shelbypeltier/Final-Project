@@ -22,11 +22,13 @@
     i.	
 3.	Burgers
   a.  Instance Variables
-    i. Type, 
-    i. Meat, instance of meat class, stores types of meat on burger and the number of each
-    ii. Cheese, instance of cheese class, stores number of slices and type of cheese
-    iii. Vegtables, instance of vegtable class, stores types of vegtables and how much of each
-    iv. Sauce, instance of sauce class, stores sauces and how much of each
+    i. Name, has name of burger
+    ii. Type, instance of type class, stores toppings for burger, name for type of burger, and price
+    iii. Meat, instance of meat class, stores types of meat on burger and the number of each
+    iv. Cheese, instance of cheese class, stores number of slices and type of cheese
+    v. Vegtables, instance of vegtable class, stores types of vegtables and how much of each
+    vi. Sauce, instance of sauce class, stores sauces and how much of each
+    vii. Price, stores cost of burger in configuration
   b.  Methods
     i. 
 4.	Salads
@@ -41,19 +43,22 @@
 7.	Desserts
   a.  Instance Variables
   b.  Methods
-8. Meat
+8. Type
+  a.  Instance Variables
+  b.  Methods
+9. Meat
   a. Instance Variables
   b. Methods
-9. Cheese
+10. Cheese
   a.  Instance Variables
   b.  Methods
-10. Sauce
+11. Vegtables
   a.  Instance Variables
   b.  Methods
-11. Type
+12. Sauce
   a.  Instance Variables
   b.  Methods
-12. Vegtables
+13. Price
   a.  Instance Variables
   b.  Methods
 
