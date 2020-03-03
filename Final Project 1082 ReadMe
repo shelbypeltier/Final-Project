@@ -1,6 +1,6 @@
 // Shelby Peltier, Miguel Diaz, 
 
 // This project will let users to enter a order into a computer system, that allows them to add, take off, and substitute items. 
-// The system will print out a total, that can be split, that includes all substitutions and tax. 
+// The system will print out a total that includes all substitutions and tax. 
 // The total can be changed until the user asks the system to print off a reciept. 
 
