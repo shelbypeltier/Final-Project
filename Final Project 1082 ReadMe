@@ -1,4 +1,4 @@
-// Shelby Peltier, Miguel Diaz, 
+// Shelby Peltier, Miguel Diaz, Matt Olson
 
 // This project will let users to enter a order into a computer system, that allows them to add, take off, and substitute items. 
 // The system will print out a total that includes all substitutions and tax. 
