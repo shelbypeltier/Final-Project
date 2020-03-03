@@ -1,7 +1,7 @@
 1.	Table
   a.	Instance variables
     i.	double Num, has table number
-    ii.	Customer Customer, contains instances of customer class
+    ii.	customer Customer, contains instances of customer class
     iii. double Bill, contains the total for the table
   b.	Methods
     i.	SplitBill, splits the bill by customer, creates additional tables for each customer
@@ -14,7 +14,7 @@
   a.	Instance variables
     i.	Name, stores the name for the customer 
     ii.	Burger, stores an instance of burger class
-    iii.	Salad, stores an instance of salad class
+    iii. Salad, stores an instance of salad class
     iv.	Side, stores an instance of side class
     v.	Drink, stores an instance of drink class
     vi.	Dessert, stores an instance of dessert class
@@ -22,13 +22,13 @@
     i.	
 3.	Burgers
   a.  Instance Variables
-    i. Meat, stores types of meat on burger and the number of each
+    i. Type, 
+    i. Meat, instance of meat class, stores types of meat on burger and the number of each
     ii. Cheese, instance of cheese class, stores number of slices and type of cheese
-    iii. Tomato, 
-    iv. Onion, 
-    v. Lettuce, 
-    vi. 
+    iii. Vegtables, instance of vegtable class, stores types of vegtables and how much of each
+    iv. Sauce, instance of sauce class, stores sauces and how much of each
   b.  Methods
+    i. 
 4.	Salads
   a.  Instance Variables
   b.  Methods
@@ -50,6 +50,10 @@
 10. Sauce
   a.  Instance Variables
   b.  Methods
-
-
+11. Type
+  a.  Instance Variables
+  b.  Methods
+12. Vegtables
+  a.  Instance Variables
+  b.  Methods
 
