@@ -22,20 +22,24 @@
     i.	
 3.  Food
   a. Instance Variables
-  b. Methods
-4.	Burgers
-  a.  Instance Variables
     i. Name, has name of burger
+    i Meat, instance of meat class, stores types of meat on burger and the number of each
+    ii. Cheese, instance of cheese class, stores number of slices and type of cheese
+    iii. Vegtables, instance of vegtable class, stores types of vegtables and how much of each
+  b. Methods
+4.	Burgers - Subclass of food
+  a.  Instance Variables
     ii. Type, instance of type class, stores toppings for burger, name for type of burger, and price
-    iii. Meat, instance of meat class, stores types of meat on burger and the number of each
-    iv. Cheese, instance of cheese class, stores number of slices and type of cheese
-    v. Vegtables, instance of vegtable class, stores types of vegtables and how much of each
+    ii. Bun, stores type of buns
     vi. Sauce, instance of sauce class, stores sauces and how much of each
-    vii. Price, stores cost of burger in configuration
+    vii. Price
   b.  Methods
     i. 
-5.	Salads
+5.	Salads - Subclass of food
   a.  Instance Variables
+    i. type, instance of type class stores contents of salad, name, and price
+    ii. Dressings, instance of dressing class, stores type of dressing used and how much
+    iii. Croutons, 
   b.  Methods
 6.	Sides
   a.  Instance Variables
@@ -61,8 +65,10 @@
 13. Sauce
   a.  Instance Variables
   b.  Methods
-14. Price
+14. Dressing
   a.  Instance Variables
   b.  Methods
-
+15. Crouton
+  a.  Instance Variables
+  b.  Methods
 
