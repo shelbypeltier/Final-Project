@@ -20,7 +20,10 @@
     vi.	Dessert, stores an instance of dessert class
   b.	Methods
     i.	
-3.	Burgers
+3.  Food
+  a. Instance Variables
+  b. Methods
+4.	Burgers
   a.  Instance Variables
     i. Name, has name of burger
     ii. Type, instance of type class, stores toppings for burger, name for type of burger, and price
@@ -31,35 +34,35 @@
     vii. Price, stores cost of burger in configuration
   b.  Methods
     i. 
-4.	Salads
+5.	Salads
   a.  Instance Variables
   b.  Methods
-5.	Sides
+6.	Sides
   a.  Instance Variables
   b.  Methods
-6.	Drinks
+7.	Drinks
   a.  Instance Variables
   b.  Methods
-7.	Desserts
+8.	Desserts
   a.  Instance Variables
   b.  Methods
-8. Type
+9. Type
   a.  Instance Variables
   b.  Methods
-9. Meat
+10. Meat
   a. Instance Variables
   b. Methods
-10. Cheese
+11. Cheese
   a.  Instance Variables
   b.  Methods
-11. Vegtables
+12. Vegtables
   a.  Instance Variables
   b.  Methods
-12. Sauce
+13. Sauce
   a.  Instance Variables
   b.  Methods
-13. Price
+14. Price
   a.  Instance Variables
   b.  Methods
-14. Food
+
 
