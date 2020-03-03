@@ -1,0 +1,55 @@
+1.	Table
+  a.	Instance variables
+    i.	double Num, has table number
+    ii.	Customer Customer, contains instances of customer class
+    iii. double Bill, contains the total for the table
+  b.	Methods
+    i.	SplitBill, splits the bill by customer, creates additional tables for each customer
+    ii.	SplitEven, splits the bill evenly amongst customers, creates additional tables for each customer
+    iii. MergeBill, adds bill from another table
+    iv.	PrintBill, prints the end bill for the table
+    v. get/set Num
+    vi. get/set Customer
+2.	Customer
+  a.	Instance variables
+    i.	Name, stores the name for the customer 
+    ii.	Burger, stores an instance of burger class
+    iii.	Salad, stores an instance of salad class
+    iv.	Side, stores an instance of side class
+    v.	Drink, stores an instance of drink class
+    vi.	Dessert, stores an instance of dessert class
+  b.	Methods
+    i.	
+3.	Burgers
+  a.  Instance Variables
+    i. Meat, stores types of meat on burger and the number of each
+    ii. Cheese, instance of cheese class, stores number of slices and type of cheese
+    iii. Tomato, 
+    iv. Onion, 
+    v. Lettuce, 
+    vi. 
+  b.  Methods
+4.	Salads
+  a.  Instance Variables
+  b.  Methods
+5.	Sides
+  a.  Instance Variables
+  b.  Methods
+6.	Drinks
+  a.  Instance Variables
+  b.  Methods
+7.	Desserts
+  a.  Instance Variables
+  b.  Methods
+8. Meat
+  a. Instance Variables
+  b. Methods
+9. Cheese
+  a.  Instance Variables
+  b.  Methods
+10. Sauce
+  a.  Instance Variables
+  b.  Methods
+
+
+
