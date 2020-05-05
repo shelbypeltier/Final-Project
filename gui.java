@@ -29,6 +29,7 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JRadioButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import javax.swing.UIManager;
 
 
 public class gui {
@@ -36,18 +37,13 @@ public class gui {
 	private JFrame frmRegister;
 	private JPanel mainPanel;
 	private JLayeredPane layeredPane;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JTextField textField_6;
 	private JTextField textField_5;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
+	private JTextField textField_6;
+	private JTextField txtTab;
 
 	/**
 	 * Launch the application.
@@ -65,15 +61,19 @@ public class gui {
 		});
 	}
 	
+	/**
+	 * Create the application.
+	 */
+	
 public void panelSwitcher(JPanel panel) {
 	layeredPane.removeAll();
 	layeredPane.add(panel); 
 	layeredPane.repaint();
 	layeredPane.revalidate();
 }
-	/**
-	 * Create the application.
-	 */
+
+//Does what it says on the tin, switches between the panels
+	
 	public gui() {
 		initialize();
 	}
@@ -89,7 +89,7 @@ public void panelSwitcher(JPanel panel) {
 		frmRegister.getContentPane().setLayout(null);
 		
 		layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, 996, 673);
+		layeredPane.setBounds(0, 0, 708, 673);
 		frmRegister.getContentPane().add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
 		
@@ -458,11 +458,11 @@ public void panelSwitcher(JPanel panel) {
 		lblNewLabel_10_3.setBounds(134, 62, 343, 52);
 		cashOutPanel.add(lblNewLabel_10_3);
 		
-		textField_5 = new JTextField();
-		textField_5.setEditable(false);
-		textField_5.setColumns(10);
-		textField_5.setBounds(506, 62, 139, 41);
-		cashOutPanel.add(textField_5);
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		textField_1.setColumns(10);
+		textField_1.setBounds(506, 62, 139, 41);
+		cashOutPanel.add(textField_1);
 		
 		JLabel lblNewLabel_10_1_1 = new JLabel("Total with tax: ");
 		lblNewLabel_10_1_1.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -497,40 +497,40 @@ public void panelSwitcher(JPanel panel) {
 		lblNewLabel_11_1_1.setBounds(381, 295, 67, 41);
 		cashOutPanel.add(lblNewLabel_11_1_1);
 		
-		textField_7 = new JTextField();
-		textField_7.setText("Enter in Amount of Cash");
-		textField_7.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		textField_7.setColumns(10);
-		textField_7.setBounds(471, 288, 174, 41);
-		cashOutPanel.add(textField_7);
+		textField_2 = new JTextField();
+		textField_2.setText("Enter in Amount of Cash");
+		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField_2.setColumns(10);
+		textField_2.setBounds(471, 288, 174, 41);
+		cashOutPanel.add(textField_2);
 		
-		textField_8 = new JTextField();
-		textField_8.setEditable(false);
-		textField_8.setColumns(10);
-		textField_8.setBounds(506, 114, 139, 41);
-		cashOutPanel.add(textField_8);
+		textField_3 = new JTextField();
+		textField_3.setEditable(false);
+		textField_3.setColumns(10);
+		textField_3.setBounds(506, 114, 139, 41);
+		cashOutPanel.add(textField_3);
 		
-		textField_9 = new JTextField();
-		textField_9.setEditable(false);
-		textField_9.setColumns(10);
-		textField_9.setBounds(506, 166, 139, 41);
-		cashOutPanel.add(textField_9);
+		textField_4 = new JTextField();
+		textField_4.setEditable(false);
+		textField_4.setColumns(10);
+		textField_4.setBounds(506, 166, 139, 41);
+		cashOutPanel.add(textField_4);
 		
-		textField_10 = new JTextField();
-		textField_10.setEditable(false);
-		textField_10.setColumns(10);
-		textField_10.setBounds(506, 221, 139, 41);
-		cashOutPanel.add(textField_10);
+		textField_5 = new JTextField();
+		textField_5.setEditable(false);
+		textField_5.setColumns(10);
+		textField_5.setBounds(506, 221, 139, 41);
+		cashOutPanel.add(textField_5);
 		
 		JButton btnNewButton_9_1 = new JButton("Cash Out");
 		btnNewButton_9_1.setBounds(506, 346, 139, 41);
 		cashOutPanel.add(btnNewButton_9_1);
 		
-		textField_11 = new JTextField();
-		textField_11.setEditable(false);
-		textField_11.setColumns(10);
-		textField_11.setBounds(506, 439, 139, 41);
-		cashOutPanel.add(textField_11);
+		textField_6 = new JTextField();
+		textField_6.setEditable(false);
+		textField_6.setColumns(10);
+		textField_6.setBounds(506, 439, 139, 41);
+		cashOutPanel.add(textField_6);
 		
 		JLabel lblNewLabel_10_2_1_1_1 = new JLabel("Change: ");
 		lblNewLabel_10_2_1_1_1.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -1140,6 +1140,38 @@ public void panelSwitcher(JPanel panel) {
 		});
 		btnNewButton_10_1_2_1_1_5.setBounds(119, 17, 108, 40);
 		dessertPanel.add(btnNewButton_10_1_2_1_1_5);
+		
+		JPanel tabPanel = new JPanel();
+		tabPanel.setBackground(UIManager.getColor("Button.background"));
+		tabPanel.setBounds(708, 0, 286, 673);
+		frmRegister.getContentPane().add(tabPanel);
+		tabPanel.setLayout(null);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBackground(Color.WHITE);
+		textArea.setBounds(10, 72, 266, 577);
+		tabPanel.add(textArea);
+		
+		JPanel billPanel = new JPanel();
+		billPanel.setBounds(41, 11, 214, 53);
+		tabPanel.add(billPanel);
+		billPanel.setLayout(null);
+		
+		JPanel currentBillPanel = new JPanel();
+		currentBillPanel.setBorder(new TitledBorder(null, "JPanel title", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		currentBillPanel.setBounds(-6, -16, 226, 76);
+		billPanel.add(currentBillPanel);
+		currentBillPanel.setLayout(null);
+		
+		txtTab = new JTextField();
+		txtTab.setBorder(null);
+		txtTab.setBounds(6, 16, 214, 53);
+		currentBillPanel.add(txtTab);
+		txtTab.setEditable(false);
+		txtTab.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTab.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtTab.setText("Current Bill");
+		txtTab.setColumns(10);
 		frmRegister.setBounds(100, 100, 1000, 700);
 		frmRegister.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
