@@ -28,11 +28,11 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JRadioButton;
 
+
 public class gui {
 
 	private JFrame frmRegister;
-	private JLayeredPane layeredPane;
-	private JPanel Main;
+	private JPanel mainPanel;
 	private JTextField textField;
 	private JTextField txtEnterInCash;
 	private JTextField textField_2;
@@ -40,6 +40,8 @@ public class gui {
 	private JTextField textField_4;
 	private JTextField textField_1;
 	private JTextField textField_5;
+	private JPanel foodPanel;
+	private JLayeredPane layeredPane;
 
 	/**
 	 * Launch the application.
@@ -56,7 +58,13 @@ public class gui {
 			}
 		});
 	}
-
+	
+public void panelSwitcher(JPanel panel) {
+	layeredPane.removeAll();
+	layeredPane.add(panel); 
+	layeredPane.repaint();
+	layeredPane.revalidate();
+}
 	/**
 	 * Create the application.
 	 */
@@ -79,13 +87,13 @@ public class gui {
 		frmRegister.getContentPane().add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
 		
-		Main = new JPanel();
-		layeredPane.add(Main, "name_279449572344700");
-		Main.setLayout(new BorderLayout(0, 0));
+		mainPanel = new JPanel();
+		layeredPane.add(mainPanel, "name_279449572344700");
+		mainPanel.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_4_1 = new JPanel();
 		panel_4_1.setBackground(new Color(211, 211, 211));
-		Main.add(panel_4_1, BorderLayout.NORTH);
+		mainPanel.add(panel_4_1, BorderLayout.NORTH);
 		panel_4_1.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		JLabel lblNewLabel_6_1 = new JLabel("Main Menu\r\n");
@@ -107,7 +115,7 @@ public class gui {
 		panel_4_1.add(lblNewLabel_7);
 		
 		JPanel panel = new JPanel();
-		Main.add(panel, BorderLayout.CENTER);
+		mainPanel.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(2, 3, 50, 50));
 		
 		JPanel panel_1 = new JPanel();
@@ -126,6 +134,12 @@ public class gui {
 		panel_1.add(panel_2);
 		
 		JButton btnCashOut = new JButton("Tab");
+		btnCashOut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				panelSwitcher(foodPanel); 
+			}
+		});
+		//Button switches view to panel 4 when pressed
 		btnCashOut.setBackground(Color.WHITE);
 		panel_2.add(btnCashOut);
 		
@@ -151,6 +165,11 @@ public class gui {
 		panel_1_1.add(panel_2_1);
 		
 		JButton btnNewButton_2 = new JButton("Tab");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(foodPanel); 
+			}
+		});
 		btnNewButton_2.setBackground(Color.WHITE);
 		panel_2_1.add(btnNewButton_2);
 		
@@ -176,6 +195,11 @@ public class gui {
 		panel_1_2.add(panel_2_2);
 		
 		JButton btnNewButton_3 = new JButton("Tab");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(foodPanel); 
+			}
+		});
 		btnNewButton_3.setBackground(Color.WHITE);
 		panel_2_2.add(btnNewButton_3);
 		
@@ -201,6 +225,11 @@ public class gui {
 		panel_1_3.add(panel_2_3);
 		
 		JButton btnNewButton_4 = new JButton("Tab");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(foodPanel); 
+			}
+		});
 		btnNewButton_4.setBackground(Color.WHITE);
 		panel_2_3.add(btnNewButton_4);
 		
@@ -226,6 +255,11 @@ public class gui {
 		panel_1_4.add(panel_2_4);
 		
 		JButton btnNewButton_5 = new JButton("Tab");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(foodPanel); 
+			}
+		});
 		btnNewButton_5.setBackground(Color.WHITE);
 		panel_2_4.add(btnNewButton_5);
 		
@@ -251,6 +285,11 @@ public class gui {
 		panel_1_5.add(panel_2_5);
 		
 		JButton btnNewButton_6 = new JButton("Tab");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(foodPanel); 
+			}
+		});
 		btnNewButton_6.setBackground(Color.WHITE);
 		panel_2_5.add(btnNewButton_6);
 		
@@ -260,13 +299,14 @@ public class gui {
 		JButton btnNewButton_1_5 = new JButton("Cash Out");
 		panel_3_5.add(btnNewButton_1_5);
 		
-		JPanel panel_4 = new JPanel();
-		layeredPane.add(panel_4, "name_279492568056700");
-		panel_4.setLayout(null);
+		foodPanel = new JPanel();
+		layeredPane.setLayer(foodPanel, 0);
+		layeredPane.add(foodPanel, "name_279492568056700");
+		foodPanel.setLayout(null);
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(0, 68, 728, 605);
-		panel_4.add(panel_5);
+		foodPanel.add(panel_5);
 		panel_5.setLayout(new BorderLayout(0, 0));
 		
 		JLayeredPane layeredPane_1 = new JLayeredPane();
@@ -949,7 +989,7 @@ public class gui {
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(728, 0, 268, 673);
 		panel_6.setBackground(new Color(245, 245, 245));
-		panel_4.add(panel_6);
+		foodPanel.add(panel_6);
 		panel_6.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -975,13 +1015,42 @@ public class gui {
 		panel_6.add(textField_5);
 		
 		JButton btnNewButton_7 = new JButton("Home");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(mainPanel);
+			}
+		});
 		btnNewButton_7.setBounds(10, 17, 94, 40);
-		panel_4.add(btnNewButton_7);
+		foodPanel.add(btnNewButton_7);
 		
 		JButton btnNewButton_10 = new JButton("Back ");
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelSwitcher(mainPanel); 
+			}
+		});
 		btnNewButton_10.setBounds(119, 17, 108, 40);
-		panel_4.add(btnNewButton_10);
+		foodPanel.add(btnNewButton_10);
+		
+		JPanel burgerPanel = new JPanel();
+		layeredPane.add(burgerPanel, "name_82277821889200");
+		
+		JPanel tendersPanel = new JPanel();
+		layeredPane.add(tendersPanel, "name_82280179585000");
+		
+		JPanel sidesPanel = new JPanel();
+		layeredPane.add(sidesPanel, "name_82368471444700");
+		
+		JPanel saladPanel = new JPanel();
+		layeredPane.add(saladPanel, "name_82369970037500");
+		
+		JPanel drinksPanel = new JPanel();
+		layeredPane.add(drinksPanel, "name_82371878305700");
+		
+		JPanel desertPanel = new JPanel();
+		layeredPane.add(desertPanel, "name_82374136305400");
 		frmRegister.setBounds(100, 100, 1000, 700);
 		frmRegister.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
 }
