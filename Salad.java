@@ -46,5 +46,19 @@ public class Salad extends Food{
 	public void setCrouton(boolean crouton) {
 		this.crouton = crouton;
 	}
+	public boolean getCarrot() {
+		return Carrot; 
+	}
+	public void setCarrot(boolean carrot) {
+		this.Carrot = carrot; 
+		
+	}
+	public boolean getTomato() {
+		return Tomato;
+	}
+	public void setTomato(boolean tomato) {
+		this.Tomato = tomato; 
+		
+	}
 	
 }
