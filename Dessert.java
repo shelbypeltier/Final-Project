@@ -6,6 +6,7 @@
 			super();
 		}
 
+
 		public Dessert(double price, String name) {
 			super(price, name);
 		}

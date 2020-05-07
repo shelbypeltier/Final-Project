@@ -11,7 +11,7 @@ public class Food {
 
 	public Food() {
 		this.price = 0.0;
-		this.name = null;	
+		this.name = "";	
 	}
 
 	public double getPrice() {

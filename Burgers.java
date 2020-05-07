@@ -1,8 +1,10 @@
 public class Burgers extends Food{
+
 	private int numOfPatties;
 	private String typeOfCheese,bunType;
 	private String tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
 	private double price = 11.99;
+
 	//i made the condiments into String so 0=none 1=easy 2=normal 3=extra let me know if this is good
 	
 	public Burgers() {
@@ -22,6 +24,7 @@ public class Burgers extends Food{
 		
 	}
 	public Burgers(double price, String name, int numOfPatties,String typeOfCheese, String bunType,
+
 			String tomato, String lettuce, String onion, String pickle, String mayo, String ketchup,
 			String grilledOnion, String mustard) {
 		super(price, name);
@@ -37,10 +40,10 @@ public class Burgers extends Food{
 		this.grilledOnion = grilledOnion;
 		this.mustard = mustard;
 	}
-	public int getNumOfPatties() {
+	public String getNumOfPatties() {
 		return numOfPatties;
 	}
-	public void setNumOfPatties(int numOfPatties) {
+	public void setNumOfPatties(String numOfPatties) {
 		this.numOfPatties = numOfPatties;
 	}
 	public String getTypeOfCheese() {
@@ -59,7 +62,6 @@ public class Burgers extends Food{
 		return tomato;
 	}
 	public void setTomato(String tomato) {
-		
 		this.tomato = tomato;
 	}
 	public String getLettuce() {

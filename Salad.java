@@ -1,46 +1,26 @@
 
 public class Salad extends Food{
-	private String tomato,carrot,cucumber,onion,dressing;
+
+	private boolean tomato,carrot,cucumber,onion,cheese,crouton;
+	private String dressing;
 	
-	public Salad(double price, String name, String tomato, String carrot, String cucumber, String onion,
-			String dressing) {
+	
+	public Salad(double price, String name, boolean tomato, boolean carrot, boolean cucumber, boolean onion,
+			boolean cheese, boolean crouton, String dressing) {
+
 		super(price, name);
 		this.tomato = tomato;
 		this.carrot = carrot;
 		this.cucumber = cucumber;
 		this.onion = onion;
+		this.cheese = cheese;
+		this.crouton = crouton;
+
 		this.dressing = dressing;
 	}
 	public Salad() {
 		super();
-		this.tomato = null;
-		this.carrot = null;
-		this.cucumber = null;
-		this.onion = null;
-		this.dressing = null;
-	}
-	public String getTomato() {
-		return tomato;
-	}
-	public void setTomato(String tomato) {
-		this.tomato = tomato;
-	}
-	public String getCarrot() {
-		return carrot;
-	}
-	public void setCarrot(String carrot) {
-		this.carrot = carrot;
-	}
-	public String getCucumber() {
-		return cucumber;
-	}
-	public void setCucumber(String cucumber) {
-		this.cucumber = cucumber;
-	}
-	public String getOnion() {
-		return onion;
-	}
-	public void setOnion(String onion) {
+    
 		this.onion = onion;
 	}
 	public String getDressing() {
@@ -53,6 +33,18 @@ public class Salad extends Food{
 	public String toString() {
 		return "Salad tomato=" + tomato + "/n carrot=" + carrot + "/n cucumber=" + cucumber + "/n onion=" + onion
 				+ "/n dressing=" + dressing + "/n getPrice()=" + getPrice() + "/n getName()=" + getName();
+	}
+	public boolean getCheese() {
+		return cheese;
+	}
+	public void setCheese(boolean cheese) {
+		this.cheese = cheese;
+	}
+	public boolean getCrouton() {
+		return crouton;
+	}
+	public void setCrouton(boolean crouton) {
+		this.crouton = crouton;
 	}
 	
 }
