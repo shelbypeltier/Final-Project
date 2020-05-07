@@ -47,17 +47,17 @@ public class Salad extends Food{
 		this.crouton = crouton;
 	}
 	public boolean getCarrot() {
-		return Carrot; 
+		return carrot; 
 	}
 	public void setCarrot(boolean carrot) {
-		this.Carrot = carrot; 
+		this.carrot = carrot; 
 		
 	}
 	public boolean getTomato() {
-		return Tomato;
+		return tomato;
 	}
 	public void setTomato(boolean tomato) {
-		this.Tomato = tomato; 
+		this.tomato = tomato; 
 		
 	}
 	
