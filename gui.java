@@ -41,6 +41,29 @@ public class gui {
 	private JTextField textField_4;
 	private JTextField textField_1;
 	private JTextField textField_5;
+	private ChickenTenders tempChickenTenders = new ChickenTenders();
+	private Dessert tempDessert = new Dessert();
+	private Drinks tempDrink = new Drinks();
+	private Salad tempSalad = new Salad();
+	private Burgers tempBurger = new Burgers();
+	private Sides tempSides =  new Sides();
+	
+	public void setStringDrink(String name) {
+		if(tempDrink.getNameOfDrink().equalsIgnoreCase(name)) {
+			tempSalad.setDressing(name);
+			}
+			else {
+				tempSalad.setDressing("");
+			}
+	}
+	public void setNameDessert(String name) {
+		if(tempDessert.getName().equalsIgnoreCase(name)) {
+			tempDessert.setName(name);
+			}
+			else {
+				tempDessert.setName("");
+			}
+	}
 
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
@@ -544,68 +567,197 @@ public class gui {
 		JButton btnNewButton_11 = new JButton("Tomatos");
 		btnNewButton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			if(!(tempBurger.getTomato().equals("yes"))) {
+				tempBurger.setTomato("yes");
+				}
+				else {
+					tempBurger.setTomato("");
+				}
 			}
 		});
 		btnNewButton_11.setBounds(10, 22, 120, 30);
 		panel_7.add(btnNewButton_11);
 		
 		JButton btnNewButton_11_1 = new JButton("Extra Tomatos");
+		btnNewButton_11_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getTomato().equals("extraTomato"))) {
+					tempBurger.setTomato("extraTomato");
+					}
+					else {
+						tempBurger.setTomato(null);
+					}
+			}
+		});
 		btnNewButton_11_1.setBounds(10, 55, 120, 30);
 		panel_7.add(btnNewButton_11_1);
 		
 		JButton btnNewButton_11_2 = new JButton("Onions");
+		btnNewButton_11_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getOnion().equalsIgnoreCase("onion"))) {
+					tempBurger.setOnion("onion");
+					}
+					else {
+						tempBurger.setOnion("");
+					}
+			}
+		});
 		btnNewButton_11_2.setBounds(523, 22, 120, 30);
 		panel_7.add(btnNewButton_11_2);
 		
 		JButton btnNewButton_11_2_1 = new JButton("Extra Onions");
+		btnNewButton_11_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getOnion().equalsIgnoreCase("extraOnion"))) {
+					tempBurger.setOnion("extraOnion");
+					}
+					else {
+						tempBurger.setOnion("");
+					}
+			}
+		});
 		btnNewButton_11_2_1.setBounds(523, 55, 120, 30);
 		panel_7.add(btnNewButton_11_2_1);
 		
 		JButton btnNewButton_11_2_2 = new JButton("Mayo");
 		btnNewButton_11_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getMayo().equals("Mayo"))) {
+					tempBurger.setMayo("mayo");
+					}
+					else {
+						tempBurger.setMayo(null);
+					}
 			}
 		});
 		btnNewButton_11_2_2.setBounds(139, 22, 120, 30);
 		panel_7.add(btnNewButton_11_2_2);
 		
 		JButton btnNewButton_11_2_3 = new JButton("Extra Mayo");
+		btnNewButton_11_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getMayo().equalsIgnoreCase("extraMayo"))) {
+					tempBurger.setTomato("extraMayo");
+					}
+					else {
+						tempBurger.setTomato(null);
+					}
+			}
+		});
 		btnNewButton_11_2_3.setBounds(140, 55, 120, 30);
 		panel_7.add(btnNewButton_11_2_3);
 		
 		JButton btnNewButton_11_3 = new JButton("Pickles");
+		btnNewButton_11_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getPickle().equalsIgnoreCase("pickles"))) {
+					tempBurger.setPickle("pickles");
+					}
+					else {
+						tempBurger.setPickle("");
+					}
+			}
+			}
+		);
 		btnNewButton_11_3.setBounds(263, 22, 120, 30);
 		panel_7.add(btnNewButton_11_3);
 		
 		JButton btnNewButton_11_1_1 = new JButton("Extra Pickles");
 		btnNewButton_11_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getPickle().equalsIgnoreCase("extraPickles"))) {
+					tempBurger.setPickle("extraPickles");
+					}
+					else {
+						tempBurger.setPickle("");
+					}
 			}
 		});
 		btnNewButton_11_1_1.setBounds(263, 55, 120, 30);
 		panel_7.add(btnNewButton_11_1_1);
 		
 		JButton btnNewButton_11_2_4 = new JButton("Lettuce");
+		btnNewButton_11_2_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getLettuce().equalsIgnoreCase("lettuce"))) {
+					tempBurger.setLettuce("lettuce");
+					}
+					else {
+						tempBurger.setLettuce("");
+					}
+			}
+		});
 		btnNewButton_11_2_4.setBounds(393, 22, 120, 30);
 		panel_7.add(btnNewButton_11_2_4);
 		
 		JButton btnNewButton_11_2_1_1 = new JButton("Extra Lettuce");
+		btnNewButton_11_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getLettuce().equalsIgnoreCase("extraLettuce"))) {
+					tempBurger.setLettuce("extraLettuce");
+					}
+					else {
+						tempBurger.setLettuce("");
+					}
+			}
+		});
 		btnNewButton_11_2_1_1.setBounds(393, 55, 120, 30);
 		panel_7.add(btnNewButton_11_2_1_1);
 		
 		JButton btnNewButton_11_4 = new JButton("Ketchup");
+		btnNewButton_11_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getKetchup().equalsIgnoreCase("ketchup"))) {
+					tempBurger.setKetchup("ketchup");
+					}
+					else {
+						tempBurger.setKetchup("");
+					}
+			}
+		});
 		btnNewButton_11_4.setBounds(10, 96, 120, 30);
 		panel_7.add(btnNewButton_11_4);
 		
 		JButton btnNewButton_11_1_2 = new JButton("Extra Ketchup");
+		btnNewButton_11_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getKetchup().equalsIgnoreCase("extraKetchup"))) {
+					tempBurger.setKetchup("extraKetchup");
+					}
+					else {
+						tempBurger.setKetchup("");
+					}
+			}
+		});
 		btnNewButton_11_1_2.setBounds(10, 129, 120, 30);
 		panel_7.add(btnNewButton_11_1_2);
 		
 		JButton btnNewButton_11_2_5 = new JButton("Mustard");
+		btnNewButton_11_2_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getMustard().equalsIgnoreCase("mustard"))) {
+					tempBurger.setMustard("mustard");
+					}
+					else {
+						tempBurger.setMustard("");
+					}
+			}
+		});
 		btnNewButton_11_2_5.setBounds(139, 96, 120, 30);
 		panel_7.add(btnNewButton_11_2_5);
 		
 		JButton btnNewButton_11_2_1_2 = new JButton("Extra Mustard");
+		btnNewButton_11_2_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getMustard().equalsIgnoreCase("extraMustard"))) {
+					tempBurger.setMustard("extraMustard");
+					}
+					else {
+						tempBurger.setMustard("");
+					}
+			}
+		});
 		btnNewButton_11_2_1_2.setBounds(139, 129, 120, 30);
 		panel_7.add(btnNewButton_11_2_1_2);
 		
@@ -616,18 +768,61 @@ public class gui {
 		burgerScreen.add(panel_7_1);
 		
 		JButton btnNewButton_12 = new JButton("American");
+		btnNewButton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getTypeOfCheese().equalsIgnoreCase("american"))) {
+					tempBurger.setTypeOfCheese("american");
+					}
+					else {
+						tempBurger.setTypeOfCheese("");
+					}
+			}
+		});
 		btnNewButton_12.setBounds(10, 24, 154, 52);
 		panel_7_1.add(btnNewButton_12);
 		
 		JButton btnNewButton_12_1 = new JButton("Swiss");
+		btnNewButton_12_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getTypeOfCheese().equalsIgnoreCase("swiss"))) {
+					tempBurger.setTypeOfCheese("swiss");
+					}
+					else {
+						tempBurger.setTypeOfCheese("");
+					}
+			}
+			}
+		);
 		btnNewButton_12_1.setBounds(197, 24, 154, 52);
 		panel_7_1.add(btnNewButton_12_1);
 		
 		JButton btnNewButton_12_2 = new JButton("Cheddar");
+		btnNewButton_12_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getTypeOfCheese().equalsIgnoreCase("cheddar"))) {
+					tempBurger.setTypeOfCheese("cheddar");
+					}
+					else {
+						tempBurger.setTypeOfCheese("");
+					}
+			}
+			}
+		);
 		btnNewButton_12_2.setBounds(380, 24, 154, 52);
 		panel_7_1.add(btnNewButton_12_2);
 		
 		JButton btnNewButton_12_2_1 = new JButton("Colby Jack");
+		btnNewButton_12_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getTypeOfCheese().equalsIgnoreCase("colbyJack"))) {
+					tempBurger.setTypeOfCheese("colbyJack");
+					}
+					else {
+						tempBurger.setTypeOfCheese("");
+					}
+			}
+			}
+		);
 		btnNewButton_12_2_1.setBounds(544, 24, 154, 52);
 		panel_7_1.add(btnNewButton_12_2_1);
 		
@@ -638,10 +833,20 @@ public class gui {
 		burgerScreen.add(panel_7_1_1);
 		
 		JButton btnNewButton_12_3 = new JButton("Quarter pound");
+		btnNewButton_12_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					tempBurger.setNumOfPatties("quarterPound");
+			}
+		});
 		btnNewButton_12_3.setBounds(10, 24, 154, 52);
 		panel_7_1_1.add(btnNewButton_12_3);
 		
 		JButton btnNewButton_12_1_1 = new JButton("Half Pound");
+		btnNewButton_12_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tempBurger.setNumOfPatties("halfPound");
+			}
+		});
 		btnNewButton_12_1_1.setBounds(197, 24, 154, 52);
 		panel_7_1_1.add(btnNewButton_12_1_1);
 		
@@ -654,16 +859,42 @@ public class gui {
 		JButton btnNewButton_12_3_1 = new JButton("Hamburger Bun");
 		btnNewButton_12_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getBunType().equalsIgnoreCase("hambBun"))) {
+					tempBurger.setBunType("hambBun");
+					}
+					else {
+						tempBurger.setBunType("");
+					}
 			}
 		});
 		btnNewButton_12_3_1.setBounds(10, 24, 154, 52);
 		panel_7_1_1_1.add(btnNewButton_12_3_1);
 		
 		JButton btnNewButton_12_1_1_1 = new JButton("Sourdough");
+		btnNewButton_12_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getBunType().equalsIgnoreCase("sourDough"))) {
+					tempBurger.setBunType("sourDough");
+					}
+					else {
+						tempBurger.setBunType("");
+					}
+			}
+		});
 		btnNewButton_12_1_1_1.setBounds(197, 24, 154, 52);
 		panel_7_1_1_1.add(btnNewButton_12_1_1_1);
 		
 		JButton btnNewButton_12_1_1_1_1 = new JButton("Rye");
+		btnNewButton_12_1_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempBurger.getBunType().equalsIgnoreCase("rye"))) {
+					tempBurger.setBunType("rye");
+					}
+					else {
+						tempBurger.setBunType("");
+					}
+			}
+		});
 		btnNewButton_12_1_1_1_1.setBounds(361, 24, 154, 52);
 		panel_7_1_1_1.add(btnNewButton_12_1_1_1_1);
 		
@@ -684,15 +915,30 @@ public class gui {
 		panel_7_2.setBounds(10, 107, 708, 128);
 		chickenPanel.add(panel_7_2);
 		
-		JButton btnNewButton_12_4_1 = new JButton("1pc");
+		JButton btnNewButton_12_4_1 = new JButton("2pc");
+		btnNewButton_12_4_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tempChickenTenders.setNumOfTenders(2);
+			}
+		});
 		btnNewButton_12_4_1.setBounds(10, 41, 154, 52);
 		panel_7_2.add(btnNewButton_12_4_1);
 		
 		JButton btnNewButton_12_4_2 = new JButton("4pc");
+		btnNewButton_12_4_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tempChickenTenders.setNumOfTenders(4);
+			}
+		});
 		btnNewButton_12_4_2.setBounds(184, 41, 154, 52);
 		panel_7_2.add(btnNewButton_12_4_2);
 		
 		JButton btnNewButton_12_4_3 = new JButton("8pc");
+		btnNewButton_12_4_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tempChickenTenders.setNumOfTenders(8);
+			}
+		});
 		btnNewButton_12_4_3.setBounds(348, 41, 154, 52);
 		panel_7_2.add(btnNewButton_12_4_3);
 		
@@ -703,34 +949,114 @@ public class gui {
 		chickenPanel.add(panel_7_1_1_1_1);
 		
 		JButton btnNewButton_12_4_1_1 = new JButton("Ranch");
+		btnNewButton_12_4_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("ranch"))) {
+					tempChickenTenders.setSauce("ranch");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1.setBounds(10, 25, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1);
 		
 		JButton btnNewButton_12_4_1_1_1 = new JButton("Sweet and Sour");
+		btnNewButton_12_4_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("sweetAndSour"))) {
+					tempChickenTenders.setSauce("sweetAndSour");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1.setBounds(188, 25, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1 = new JButton("BBQ");
+		btnNewButton_12_4_1_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("bbq"))) {
+					tempChickenTenders.setSauce("bbq");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1.setBounds(352, 25, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_1 = new JButton("Honey Mustard");
+		btnNewButton_12_4_1_1_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("honeyMustard"))) {
+					tempChickenTenders.setSauce("honeyMustard");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_1.setBounds(516, 25, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2 = new JButton("Chipotle BBQ");
+		btnNewButton_12_4_1_1_1_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("chipotleBbq"))) {
+					tempChickenTenders.setSauce("chipotleBbq");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2.setBounds(10, 113, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_3 = new JButton("Buffalo");
+		btnNewButton_12_4_1_1_1_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("buffalo"))) {
+					tempChickenTenders.setSauce("buffalo");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_3.setBounds(188, 113, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_3);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_2 = new JButton("Ketchup");
+		btnNewButton_12_4_1_1_1_1_2_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("ketchup"))) {
+					tempChickenTenders.setSauce("ketchup");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_2.setBounds(352, 113, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_3 = new JButton("Mustard");
+		btnNewButton_12_4_1_1_1_1_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempChickenTenders.getSauce().equalsIgnoreCase("mustard"))) {
+					tempChickenTenders.setSauce("mustard");
+					}
+					else {
+						tempChickenTenders.setSauce("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_3.setBounds(516, 113, 154, 52);
 		panel_7_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_3);
 		
@@ -752,10 +1078,30 @@ public class gui {
 		sidesPanel.add(panel_7_2_1);
 		
 		JButton btnNewButton_12_4_1_2 = new JButton("Regular");
+		btnNewButton_12_4_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("regFry"))) {
+					tempSides.setName("regFry");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_2.setBounds(10, 41, 98, 52);
 		panel_7_2_1.add(btnNewButton_12_4_1_2);
 		
 		JButton btnNewButton_12_4_2_1 = new JButton("Large");
+		btnNewButton_12_4_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("largeFry"))) {
+					tempSides.setName("largeFry");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_1.setBounds(138, 41, 98, 52);
 		panel_7_2_1.add(btnNewButton_12_4_2_1);
 		
@@ -766,38 +1112,98 @@ public class gui {
 		sidesPanel.add(panel_7_2_1_1);
 		
 		JButton btnNewButton_12_4_1_2_1 = new JButton("Regular");
+		btnNewButton_12_4_1_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("regOnionRings"))) {
+					tempSides.setName("regOnionRings");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_2_1.setBounds(10, 41, 98, 52);
 		panel_7_2_1_1.add(btnNewButton_12_4_1_2_1);
 		
 		JButton btnNewButton_12_4_2_1_1 = new JButton("Large");
+		btnNewButton_12_4_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("largeOnionRing"))) {
+					tempSides.setName("largeOnionRing");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_1_1.setBounds(138, 41, 98, 52);
 		panel_7_2_1_1.add(btnNewButton_12_4_2_1_1);
 		
 		JPanel panel_7_2_1_1_1 = new JPanel();
 		panel_7_2_1_1_1.setLayout(null);
-		panel_7_2_1_1_1.setBorder(new TitledBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)), "Chesse curds", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_7_2_1_1_1.setBorder(new TitledBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)), "Cheese curds", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_7_2_1_1_1.setBounds(10, 303, 286, 128);
 		sidesPanel.add(panel_7_2_1_1_1);
 		
 		JButton btnNewButton_12_4_1_2_1_1 = new JButton("Regular");
+		btnNewButton_12_4_1_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("regCheeseCurd"))) {
+					tempSides.setName("regChesseCurd");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_2_1_1.setBounds(10, 41, 98, 52);
 		panel_7_2_1_1_1.add(btnNewButton_12_4_1_2_1_1);
 		
 		JButton btnNewButton_12_4_2_1_1_1 = new JButton("Large");
+		btnNewButton_12_4_2_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("largeCheeseCurd"))) {
+					tempSides.setName("largeCheeseCurd");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_1_1_1.setBounds(138, 41, 98, 52);
 		panel_7_2_1_1_1.add(btnNewButton_12_4_2_1_1_1);
 		
 		JPanel panel_7_2_1_1_2 = new JPanel();
 		panel_7_2_1_1_2.setLayout(null);
-		panel_7_2_1_1_2.setBorder(new TitledBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)), "Onion Rings", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_7_2_1_1_2.setBorder(new TitledBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)), "cole slaw", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_7_2_1_1_2.setBounds(401, 303, 286, 128);
 		sidesPanel.add(panel_7_2_1_1_2);
 		
 		JButton btnNewButton_12_4_1_2_1_2 = new JButton("Regular");
+		btnNewButton_12_4_1_2_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("regColeSlaw"))) {
+					tempSides.setName("regColeSlaw");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_2_1_2.setBounds(10, 41, 98, 52);
 		panel_7_2_1_1_2.add(btnNewButton_12_4_1_2_1_2);
 		
 		JButton btnNewButton_12_4_2_1_1_2 = new JButton("Large");
+		btnNewButton_12_4_2_1_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("largeColeSlaw"))) {
+					tempSides.setName("largeColeSlaw");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_1_1_2.setBounds(138, 41, 98, 52);
 		panel_7_2_1_1_2.add(btnNewButton_12_4_2_1_1_2);
 		
@@ -808,10 +1214,30 @@ public class gui {
 		sidesPanel.add(panel_7_2_1_1_3);
 		
 		JButton btnNewButton_12_4_1_2_1_3 = new JButton("Regular");
+		btnNewButton_12_4_1_2_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("regMozzarellaSticks"))) {
+					tempSides.setName("regMozzarellaStricks");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_2_1_3.setBounds(10, 41, 98, 52);
 		panel_7_2_1_1_3.add(btnNewButton_12_4_1_2_1_3);
 		
 		JButton btnNewButton_12_4_2_1_1_3 = new JButton("Large");
+		btnNewButton_12_4_2_1_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("largeMozzarellaSticks"))) {
+					tempSides.setName("largeMozzarellaSticks");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_1_1_3.setBounds(138, 41, 98, 52);
 		panel_7_2_1_1_3.add(btnNewButton_12_4_2_1_1_3);
 		
@@ -822,10 +1248,30 @@ public class gui {
 		sidesPanel.add(panel_7_2_1_1_4);
 		
 		JButton btnNewButton_12_4_1_2_1_4 = new JButton("Regular");
+		btnNewButton_12_4_1_2_1_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("regWaffleFry"))) {
+					tempSides.setName("regWaffleFry");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_2_1_4.setBounds(10, 41, 98, 52);
 		panel_7_2_1_1_4.add(btnNewButton_12_4_1_2_1_4);
 		
 		JButton btnNewButton_12_4_2_1_1_4 = new JButton("Large");
+		btnNewButton_12_4_2_1_1_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(tempSides.getName().equalsIgnoreCase("largeWaffleFry"))) {
+					tempSides.setName("largeWaffleFry");
+					}
+					else {
+						tempSides.setName("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_1_1_4.setBounds(138, 41, 98, 52);
 		panel_7_2_1_1_4.add(btnNewButton_12_4_2_1_1_4);
 		
@@ -847,32 +1293,84 @@ public class gui {
 		saladPanel.add(panel_7_2_2);
 		
 		JButton btnNewButton_12_4_1_3 = new JButton("Carrots");
+		btnNewButton_12_4_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getCarrot() == true) {
+					tempSalad.setCarrot(false);
+					}
+					else {
+						tempSalad.setCarrot(true);
+					}
+			}
+		});
 		btnNewButton_12_4_1_3.setBounds(10, 41, 154, 52);
 		panel_7_2_2.add(btnNewButton_12_4_1_3);
 		
 		JButton btnNewButton_12_4_2_2 = new JButton("Grape Tomatos");
 		btnNewButton_12_4_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getTomato() == true) {
+					tempSalad.setTomato(false);
+					}
+					else {
+						tempSalad.setTomato(true);
+					}
 			}
 		});
 		btnNewButton_12_4_2_2.setBounds(184, 41, 154, 52);
 		panel_7_2_2.add(btnNewButton_12_4_2_2);
 		
 		JButton btnNewButton_12_4_3_1 = new JButton("cucumber");
+		btnNewButton_12_4_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getCucumber() == true) {
+					tempSalad.setCucumber(false);
+					}
+					else {
+						tempSalad.setCucumber(true);
+					}
+			}
+		});
 		btnNewButton_12_4_3_1.setBounds(348, 41, 154, 52);
 		panel_7_2_2.add(btnNewButton_12_4_3_1);
 		
 		JButton btnNewButton_12_4_3_1_1 = new JButton("onion");
+		btnNewButton_12_4_3_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getOnion() == true) {
+					tempSalad.setOnion(false);
+					}
+					else {
+						tempSalad.setOnion(true);
+					}
+			}
+		});
 		btnNewButton_12_4_3_1_1.setBounds(512, 41, 154, 52);
 		panel_7_2_2.add(btnNewButton_12_4_3_1_1);
 		
 		JButton btnNewButton_12_4_1_3_1 = new JButton("Shredded Cheese");
+		btnNewButton_12_4_1_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getCheese() == true) {
+					tempSalad.setCarrot(false);
+					}
+					else {
+						tempSalad.setCarrot(true);
+					}
+			}
+		});
 		btnNewButton_12_4_1_3_1.setBounds(10, 104, 154, 52);
 		panel_7_2_2.add(btnNewButton_12_4_1_3_1);
 		
 		JButton btnNewButton_12_4_2_2_1 = new JButton("Croutons");
 		btnNewButton_12_4_2_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getCrouton() == true) {
+					tempSalad.setCarrot(false);
+					}
+					else {
+						tempSalad.setCarrot(true);
+					}
 			}
 		});
 		btnNewButton_12_4_2_2_1.setBounds(184, 104, 154, 52);
@@ -885,50 +1383,170 @@ public class gui {
 		saladPanel.add(panel_7_1_1_1_1_1);
 		
 		JButton btnNewButton_12_4_1_1_2 = new JButton("Ranch");
+		btnNewButton_12_4_1_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("ranch")) {
+					tempSalad.setDressing("ranch");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_2.setBounds(10, 25, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_2);
 		
 		JButton btnNewButton_12_4_1_1_1_2 = new JButton("Sweet and Sour");
+		btnNewButton_12_4_1_1_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("sweetAndSour")) {
+					tempSalad.setDressing("sweetAndSour");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_2.setBounds(188, 25, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_4 = new JButton("BBQ");
+		btnNewButton_12_4_1_1_1_1_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("Bbq")) {
+					tempSalad.setDressing("Bbq");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_4.setBounds(352, 25, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_4);
 		
 		JButton btnNewButton_12_4_1_1_1_1_1_1 = new JButton("Honey Mustard");
+		btnNewButton_12_4_1_1_1_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("HoneyMustard")) {
+					tempSalad.setDressing("HoneyMustard");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_1_1.setBounds(516, 25, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_1_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_1 = new JButton("Chipotle BBQ");
+		btnNewButton_12_4_1_1_1_1_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("chipotleBbq")) {
+					tempSalad.setDressing("chipotleBbq");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_1.setBounds(10, 88, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_3_1 = new JButton("Buffalo");
+		btnNewButton_12_4_1_1_1_1_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("Buffalo")) {
+					tempSalad.setDressing("Buffalo");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_3_1.setBounds(188, 88, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_3_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_2_1 = new JButton("Ketchup");
+		btnNewButton_12_4_1_1_1_1_2_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("Ketchup")) {
+					tempSalad.setDressing("Ketchup");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_2_1.setBounds(352, 88, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_2_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_3_1 = new JButton("Mustard");
+		btnNewButton_12_4_1_1_1_1_2_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("mustard")) {
+					tempSalad.setDressing("mustard");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_3_1.setBounds(516, 88, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_3_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_1_1 = new JButton("1000 island");
+		btnNewButton_12_4_1_1_1_1_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("1000Island")) {
+					tempSalad.setDressing("1000Island");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_1_1.setBounds(10, 151, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_1_1);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_1_2 = new JButton("Blue Cheese");
+		btnNewButton_12_4_1_1_1_1_2_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("blueCheese")) {
+					tempSalad.setDressing("blueCheese");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_1_2.setBounds(188, 151, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_1_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_1_3 = new JButton("French");
+		btnNewButton_12_4_1_1_1_1_2_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("french")) {
+					tempSalad.setDressing("french");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_1_3.setBounds(352, 151, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_1_3);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_1_4 = new JButton("Italian");
+		btnNewButton_12_4_1_1_1_1_2_1_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempSalad.getDressing().equalsIgnoreCase("italian")) {
+					tempSalad.setDressing("italian");
+					}
+					else {
+						tempSalad.setDressing("");
+					}
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_1_4.setBounds(516, 151, 154, 52);
 		panel_7_1_1_1_1_1.add(btnNewButton_12_4_1_1_1_1_2_1_4);
 		
@@ -953,16 +1571,42 @@ public class gui {
 		JButton btnNewButton_12_4_1_4 = new JButton("Small");
 		btnNewButton_12_4_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(tempDrink.getSize().equalsIgnoreCase("small")) {
+					tempDrink.setSize("small");
+					}
+					else {
+						tempDrink.setSize("");
+					}
 			}
 		});
 		btnNewButton_12_4_1_4.setBounds(10, 41, 154, 52);
 		panel_7_2_3.add(btnNewButton_12_4_1_4);
 		
 		JButton btnNewButton_12_4_2_3 = new JButton("Regular");
+		btnNewButton_12_4_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempDrink.getSize().equalsIgnoreCase("regular")) {
+					tempDrink.setSize("regular");
+					}
+					else {
+						tempDrink.setSize("");
+					}
+			}
+		});
 		btnNewButton_12_4_2_3.setBounds(184, 41, 154, 52);
 		panel_7_2_3.add(btnNewButton_12_4_2_3);
 		
 		JButton btnNewButton_12_4_3_2 = new JButton("Large");
+		btnNewButton_12_4_3_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(tempDrink.getSize().equalsIgnoreCase("large")) {
+					tempDrink.setSize("large");
+					}
+					else {
+						tempDrink.setSize("");
+					}
+			}
+		});
 		btnNewButton_12_4_3_2.setBounds(348, 41, 154, 52);
 		panel_7_2_3.add(btnNewButton_12_4_3_2);
 		
@@ -973,38 +1617,74 @@ public class gui {
 		drinksPanel.add(panel_7_1_1_1_1_2);
 		
 		JButton btnNewButton_12_4_1_1_3 = new JButton("Pepsi");
+		btnNewButton_12_4_1_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_3.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_3.setBounds(10, 25, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_3);
 		
 		JButton btnNewButton_12_4_1_1_1_3 = new JButton("Diet Pepsi");
 		btnNewButton_12_4_1_1_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_3.getText());
 			}
 		});
 		btnNewButton_12_4_1_1_1_3.setBounds(188, 25, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_3);
 		
 		JButton btnNewButton_12_4_1_1_1_1_5 = new JButton("Mtn Dew");
+		btnNewButton_12_4_1_1_1_1_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_1_5.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_5.setBounds(352, 25, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_1_5);
 		
 		JButton btnNewButton_12_4_1_1_1_1_1_2 = new JButton("Rootbeer");
+		btnNewButton_12_4_1_1_1_1_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_1_1_2.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_1_2.setBounds(516, 25, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_1_1_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_4 = new JButton("Dr.Pepper");
+		btnNewButton_12_4_1_1_1_1_2_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_1_2_4.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_4.setBounds(10, 113, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_1_2_4);
 		
 		JButton btnNewButton_12_4_1_1_1_1_3_2 = new JButton("Sprite");
+		btnNewButton_12_4_1_1_1_1_3_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_1_3_2.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_3_2.setBounds(188, 113, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_1_3_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_2_2 = new JButton("Ice Tea");
+		btnNewButton_12_4_1_1_1_1_2_2_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_1_2_2_2.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_2_2.setBounds(352, 113, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_1_2_2_2);
 		
 		JButton btnNewButton_12_4_1_1_1_1_2_3_2 = new JButton("Milk");
+		btnNewButton_12_4_1_1_1_1_2_3_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setStringDrink(btnNewButton_12_4_1_1_1_1_2_3_2.getText());
+			}
+		});
 		btnNewButton_12_4_1_1_1_1_2_3_2.setBounds(516, 113, 154, 52);
 		panel_7_1_1_1_1_2.add(btnNewButton_12_4_1_1_1_1_2_3_2);
 		
@@ -1026,14 +1706,29 @@ public class gui {
 		dessertPanel.add(panel_7_1_1_1_1_2_1);
 		
 		JButton btnNewButton_12_4_1_4_1_1 = new JButton("Chocolate");
+		btnNewButton_12_4_1_4_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setNameDessert("chocolateShake");
+			}
+		});
 		btnNewButton_12_4_1_4_1_1.setBounds(10, 35, 154, 52);
 		panel_7_1_1_1_1_2_1.add(btnNewButton_12_4_1_4_1_1);
 		
 		JButton btnNewButton_12_4_1_4_1_2 = new JButton("Strawberry");
+		btnNewButton_12_4_1_4_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setNameDessert("strawberryShake");
+			}
+		});
 		btnNewButton_12_4_1_4_1_2.setBounds(188, 35, 154, 52);
 		panel_7_1_1_1_1_2_1.add(btnNewButton_12_4_1_4_1_2);
 		
 		JButton btnNewButton_12_4_1_4_1_3 = new JButton("Vanilla");
+		btnNewButton_12_4_1_4_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setNameDessert("vanillaShake");
+			}
+		});
 		btnNewButton_12_4_1_4_1_3.setBounds(371, 35, 154, 52);
 		panel_7_1_1_1_1_2_1.add(btnNewButton_12_4_1_4_1_3);
 		
@@ -1052,14 +1747,29 @@ public class gui {
 		dessertPanel.add(panel_7_1_1_1_1_2_1_1);
 		
 		JButton btnNewButton_12_4_1_4_1_1_1 = new JButton("Chocolate");
+		btnNewButton_12_4_1_4_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setNameDessert("chocolateSundae");
+			}
+		});
 		btnNewButton_12_4_1_4_1_1_1.setBounds(10, 35, 154, 52);
 		panel_7_1_1_1_1_2_1_1.add(btnNewButton_12_4_1_4_1_1_1);
 		
 		JButton btnNewButton_12_4_1_4_1_2_1 = new JButton("Strawberry");
+		btnNewButton_12_4_1_4_1_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setNameDessert("strawberrySundae");
+			}
+		});
 		btnNewButton_12_4_1_4_1_2_1.setBounds(188, 35, 154, 52);
 		panel_7_1_1_1_1_2_1_1.add(btnNewButton_12_4_1_4_1_2_1);
 		
 		JButton btnNewButton_12_4_1_4_1_3_1 = new JButton("Vanilla");
+		btnNewButton_12_4_1_4_1_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setNameDessert("vanillaSundae");
+			}
+		});
 		btnNewButton_12_4_1_4_1_3_1.setBounds(371, 35, 154, 52);
 		panel_7_1_1_1_1_2_1_1.add(btnNewButton_12_4_1_4_1_3_1);
 		

@@ -1,15 +1,12 @@
 
 public class ChickenTenders extends Food{
-	private Sauce sauce;
+	private String sauce;
 	private int numOfTenders;
-	private double priceofTend = 10.99;
-
-	
-	public Sauce getSauce() {
+	public String getSauce() {
 		return sauce;
 	}
 	
-	public void setSauce(Sauce sauce) {
+	public void setSauce(String sauce) {
 		this.sauce = sauce;
 	}
 	
@@ -21,7 +18,7 @@ public class ChickenTenders extends Food{
 		this.numOfTenders = numOfTenders;
 	}
 	
-	public ChickenTenders(double price, String name, Sauce sauce, int numOfTenders) {
+	public ChickenTenders(double price, String name,String sauce, int numOfTenders) {
 		super(price, name);
 		this.sauce = sauce;
 		this.numOfTenders = numOfTenders;
@@ -29,9 +26,8 @@ public class ChickenTenders extends Food{
 	
 	public ChickenTenders() {
 		super();
-		this.sauce = null;
+		this.sauce = "";
 		this.numOfTenders = 0;
-		
 	}
 
 	@Override
@@ -39,15 +35,6 @@ public class ChickenTenders extends Food{
 		return "ChickenTenders sauce=" + sauce + "/n numOfTenders=" + numOfTenders + "/n Price=" + getPrice()
 				+ "Name()=" + getName();
 	}
-
-	public double getPriceofTend() {
-		return priceofTend;
-	}
-
-	public void setPriceofTend(double priceofTend) {
-		this.priceofTend = priceofTend;
-	}
 	
 	
 }
-
