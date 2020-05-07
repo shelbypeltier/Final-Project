@@ -32,7 +32,7 @@ public class Food {
 
 	@Override
 	public String toString() {
-		return "Food price=" + price + "/n name=" + name";
+		return "Food price=" + price + "/n name=" + name;
 	}
 
 	

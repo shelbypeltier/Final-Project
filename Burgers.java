@@ -1,33 +1,29 @@
 
 public class Burgers extends Food{
-	private int numOfPatties,slicesOfCheese;
-	private String typeOfMeat,typeOfCheese,bunType;
-	private int tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
-	//i made the condiments into int so 0=none 1=easy 2=normal 3=extra let me know if this is good
+	private int numOfPatties;
+	private String typeOfCheese,bunType;
+	private String tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
+	//i made the condiments into String so 0=none 1=easy 2=normal 3=extra let me know if this is good
 	
 	public Burgers() {
 		super();
-		this.numOfPatties = 0;
-		this.slicesOfCheese = 0;
-		this.typeOfMeat = null;
+		this.numOfPatties = 1;
 		this.typeOfCheese = null;
 		this.bunType = null;
-		this.tomato = 0;
-		this.lettuce = 0;
-		this.onion = 0;
-		this.pickle = 0;
-		this.mayo = 0;
-		this.ketchup = 0;
-		this.grilledOnion = 0;
-		this.mustard = 0;
+		this.tomato = null;
+		this.lettuce = null;
+		this.onion = null;
+		this.pickle = null;
+		this.mayo = null;
+		this.ketchup = null;
+		this.grilledOnion = null;
+		this.mustard = null;
 	}
-	public Burgers(double price, String name, int numOfPatties, int slicesOfCheese, String typeOfMeat,
-			String typeOfCheese, String bunType, int tomato, int lettuce, int onion, int pickle, int mayo, int ketchup,
-			int grilledOnion, int mustard) {
+	public Burgers(double price, String name, int numOfPatties,String typeOfCheese, String bunType,
+			String tomato, String lettuce, String onion, String pickle, String mayo, String ketchup,
+			String grilledOnion, String mustard) {
 		super(price, name);
 		this.numOfPatties = numOfPatties;
-		this.slicesOfCheese = slicesOfCheese;
-		this.typeOfMeat = typeOfMeat;
 		this.typeOfCheese = typeOfCheese;
 		this.bunType = bunType;
 		this.tomato = tomato;
@@ -45,18 +41,6 @@ public class Burgers extends Food{
 	public void setNumOfPatties(int numOfPatties) {
 		this.numOfPatties = numOfPatties;
 	}
-	public int getSlicesOfCheese() {
-		return slicesOfCheese;
-	}
-	public void setSlicesOfCheese(int slicesOfCheese) {
-		this.slicesOfCheese = slicesOfCheese;
-	}
-	public String getTypeOfMeat() {
-		return typeOfMeat;
-	}
-	public void setTypeOfMeat(String typeOfMeat) {
-		this.typeOfMeat = typeOfMeat;
-	}
 	public String getTypeOfCheese() {
 		return typeOfCheese;
 	}
@@ -69,61 +53,57 @@ public class Burgers extends Food{
 	public void setBunType(String bunType) {
 		this.bunType = bunType;
 	}
-	public int getTomato() {
+	public String getTomato() {
 		return tomato;
 	}
-	public void setTomato(int tomato) {
+	public void setTomato(String tomato) {
 		this.tomato = tomato;
 	}
-	public int getLettuce() {
+	public String getLettuce() {
 		return lettuce;
 	}
-	public void setLettuce(int lettuce) {
+	public void setLettuce(String lettuce) {
 		this.lettuce = lettuce;
 	}
-	public int getOnion() {
+	public String getOnion() {
 		return onion;
 	}
-	public void setOnion(int onion) {
+	public void setOnion(String onion) {
 		this.onion = onion;
 	}
-	public int getPickle() {
+	public String getPickle() {
 		return pickle;
 	}
-	public void setPickle(int pickle) {
+	public void setPickle(String pickle) {
 		this.pickle = pickle;
 	}
-	public int getMayo() {
+	public String getMayo() {
 		return mayo;
 	}
-	public void setMayo(int mayo) {
+	public void setMayo(String mayo) {
 		this.mayo = mayo;
 	}
-	public int getKetchup() {
+	public String getKetchup() {
 		return ketchup;
 	}
-	public void setKetchup(int ketchup) {
+	public void setKetchup(String ketchup) {
 		this.ketchup = ketchup;
 	}
-	public int getGrilledOnion() {
+	public String getGrilledOnion() {
 		return grilledOnion;
 	}
-	public void setGrilledOnion(int grilledOnion) {
+	public void setGrilledOnion(String grilledOnion) {
 		this.grilledOnion = grilledOnion;
 	}
-	public int getMustard() {
+	public String getMustard() {
 		return mustard;
 	}
-	public void setMustard(int mustard) {
+	public void setMustard(String mustard) {
 		this.mustard = mustard;
 	}
 	@Override
 	public String toString() {
-		return "Burgers numOfPatties=" + numOfPatties + "/n slicesOfCheese=" + slicesOfCheese + "/n typeOfMeat="
-				+ typeOfMeat + "/n typeOfCheese=" + typeOfCheese + "/n bunType=" + bunType + "/n tomato=" + tomato
-				+ "/n lettuce=" + lettuce + "/n onion=" + onion + "/n pickle=" + pickle + "/n mayo=" + mayo
-				+ "/n ketchup=" + ketchup + "/n grilledOnion=" + grilledOnion + "/n mustard=" + mustard
-				+ "/n getPrice()=" + getPrice() + "/n getName()=" + getName() + "/n toString()=" + super.toString();
+		return "";
 	}
 	
 	

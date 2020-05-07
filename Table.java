@@ -1,20 +1,15 @@
+import java.util.ArrayList;
 
 public class Table {
 	private int tableNum;
-	private Customer custormer;
 	private double totalbill;
-	
+	private ArrayList<Food> food = new ArrayList<Food>();
+	 
 	public int getTableNum() {
 		return tableNum;
 	}
 	public void setTableNum(int tableNum) {
 		this.tableNum = tableNum;
-	}
-	public Customer getCustormer() {
-		return custormer;
-	}
-	public void setCustormer(Customer custormer) {
-		this.custormer = custormer;
 	}
 	public double getTotalbill() {
 		return totalbill;
@@ -22,11 +17,18 @@ public class Table {
 	public void setTotalbill(double totalbill) {
 		this.totalbill = totalbill;
 	}
-	
-	public Table(int tableNum, Customer custormer, double totalbill) {
+	public ArrayList<Food> getFood() {
+		return food;
+	}
+	public void addFood(Food food) {
+		this.food.add(food);
+	}
+	public void removeFood(Food food) {
+		this.food.remove(food);
+	}
+	public Table(int tableNum, double totalbill) {
 		super();
 		this.tableNum = tableNum;
-		this.custormer = custormer;
 		this.totalbill = totalbill;
 	}
 	@Override
