@@ -47,6 +47,9 @@ public class gui {
 	private Salad tempSalad = new Salad();
 	private Burgers tempBurger = new Burgers();
 	private Sides tempSides =  new Sides();
+	private int numOfTable = 0;
+	private int numOfTables = 6;
+	private Table[] tables = new Table[6];  
 	
 	public void setStringDrink(String name) {
 		if(tempDrink.getNameOfDrink().equalsIgnoreCase(name)) {
@@ -104,6 +107,11 @@ public class gui {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		for(int i=0;i < numOfTables ;i++) {
+		tables[i] = new Table(i+1);
+		}
+		
 		frmRegister = new JFrame();
 		frmRegister.setResizable(false);
 		frmRegister.setTitle("Register");
@@ -906,6 +914,15 @@ public class gui {
 		lblNewLabel_12.setBounds(187, 11, 284, 51);
 		burgerScreen.add(lblNewLabel_12);
 		
+		JButton btnNewButton_13_5 = new JButton("Create");
+		btnNewButton_13_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tables[numOfTable].addFood(tempBurger);
+			}
+		});
+		btnNewButton_13_5.setBounds(517, 11, 145, 51);
+		burgerScreen.add(btnNewButton_13_5);
+		
 		chickenPanel.setLayout(null);
 		layeredPane1.add(chickenPanel, "name_360921205834800");
 		
@@ -1067,6 +1084,15 @@ public class gui {
 		lblNewLabel_12_1.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel_12_1.setBounds(195, 27, 284, 51);
 		chickenPanel.add(lblNewLabel_12_1);
+		
+		JButton btnNewButton_13_4 = new JButton("Create");
+		btnNewButton_13_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tables[numOfTable].addFood(tempChickenTenders);
+			}
+		});
+		btnNewButton_13_4.setBounds(504, 27, 166, 69);
+		chickenPanel.add(btnNewButton_13_4);
 		
 		sidesPanel.setLayout(null);
 		layeredPane1.add(sidesPanel, "name_361320264502300");
@@ -1283,6 +1309,14 @@ public class gui {
 		lblNewLabel_12_2.setBounds(196, 50, 284, 51);
 		sidesPanel.add(lblNewLabel_12_2);
 		
+		JButton btnNewButton_13_3 = new JButton("Add to table");
+		btnNewButton_13_3.setBounds(490, 32, 166, 69);
+		sidesPanel.add(btnNewButton_13_3);
+		btnNewButton_13_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tables[numOfTable].addFood(tempSides);
+			}
+		});
 		saladPanel.setLayout(null);
 		layeredPane1.add(saladPanel, "name_362045875581000");
 		
@@ -1558,6 +1592,14 @@ public class gui {
 		lblNewLabel_12_1_1.setBounds(195, 27, 284, 51);
 		saladPanel.add(lblNewLabel_12_1_1);
 		
+		JButton btnNewButton_13_2 = new JButton("Add to table");
+		btnNewButton_13_2.setBounds(528, 27, 166, 69);
+		saladPanel.add(btnNewButton_13_2);
+		btnNewButton_13_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tables[numOfTable].addFood(tempSalad);
+			}
+		});
 	
 		drinksPanel.setLayout(null);
 		layeredPane1.add(drinksPanel, "name_362790125265300");
@@ -1696,6 +1738,15 @@ public class gui {
 		lblNewLabel_12_1_2.setBounds(195, 27, 284, 51);
 		drinksPanel.add(lblNewLabel_12_1_2);
 		
+		JButton btnNewButton_13_1 = new JButton("Create");
+		btnNewButton_13_1.setBounds(523, 11, 166, 69);
+		drinksPanel.add(btnNewButton_13_1);
+		btnNewButton_13_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tables[numOfTable].addFood(tempDrink);
+			}
+		});
+		
 		dessertPanel.setLayout(null);
 		layeredPane1.add(dessertPanel, "name_363207220296900");
 		
@@ -1772,6 +1823,15 @@ public class gui {
 		});
 		btnNewButton_12_4_1_4_1_3_1.setBounds(371, 35, 154, 52);
 		panel_7_1_1_1_1_2_1_1.add(btnNewButton_12_4_1_4_1_3_1);
+		
+		JButton btnNewButton_13 = new JButton("Add to table");
+		btnNewButton_13.setBounds(524, 9, 166, 69);
+		dessertPanel.add(btnNewButton_13);
+		btnNewButton_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tables[numOfTable].addFood(tempDessert);
+			}
+		});
 		
 		tabScreen.setBounds(728, 0, 268, 673);
 		tabScreen.setBackground(new Color(245, 245, 245));

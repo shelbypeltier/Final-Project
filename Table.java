@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Table {
 	private int tableNum;
-	private double totalbill;
+	private double totalbill = 0.0;
 	private ArrayList<Food> food = new ArrayList<Food>();
 	 
 	public int getTableNum() {
@@ -26,10 +26,9 @@ public class Table {
 	public void removeFood(Food food) {
 		this.food.remove(food);
 	}
-	public Table(int tableNum, double totalbill) {
+	public Table(int tableNum) {
 		super();
 		this.tableNum = tableNum;
-		this.totalbill = totalbill;
 	}
 	@Override
 	public String toString() {
