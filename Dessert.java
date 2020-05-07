@@ -1,42 +1,28 @@
 
-public class Dessert extends Food{
+	public class Dessert extends Food{
+	private double priceofdessert=5.00;
 
-	public Dessert() {
-		super();
-	}
+		public Dessert() {
+			super();
+		}
 
-	public Dessert(double price, String name) {
-		super(price, name);
-	}
-	
-	
-	@Override
-	public double getPrice() {
-		return super.getPrice();
-	}
 
-	@Override
-	public void setPrice(double price) {
-		// TODO Auto-generated method stub
-		super.setPrice(price);
-	}
+		public Dessert(double price, String name) {
+			super(price, name);
+		}
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return super.getName();
-	}
+		@Override
+		public String toString() {
+			return "Dessert Price =" + getPrice() + "/n Name=" + getName();
+		}
 
-	@Override
-	public void setName(String name) {
-		// TODO Auto-generated method stub
-		super.setName(name);
-	}
+		public double getPriceofdessert() {
+			return priceofdessert;
+		}
 
-	@Override
-	public String toString() {
-		return "Dessert Price =" + getPrice() + "/n Name=" + getName();
+		public void setPriceofdessert(double priceofdessert) {
+			this.priceofdessert = priceofdessert;
+		}
+		
+		
 	}
-	
-	
-}

@@ -1,11 +1,13 @@
 
 public class Salad extends Food{
+
 	private boolean tomato,carrot,cucumber,onion,cheese,crouton;
 	private String dressing;
 	
 	
 	public Salad(double price, String name, boolean tomato, boolean carrot, boolean cucumber, boolean onion,
 			boolean cheese, boolean crouton, String dressing) {
+
 		super(price, name);
 		this.tomato = tomato;
 		this.carrot = carrot;
@@ -13,38 +15,12 @@ public class Salad extends Food{
 		this.onion = onion;
 		this.cheese = cheese;
 		this.crouton = crouton;
+
 		this.dressing = dressing;
 	}
 	public Salad() {
 		super();
-		this.tomato = true;
-		this.carrot = true;
-		this.cucumber = true;
-		this.onion = true;
-		this.dressing = "";
-	}
-	public boolean getTomato() {
-		return tomato;
-	}
-	public void setTomato(boolean tomato) {
-		this.tomato = tomato;
-	}
-	public boolean getCarrot() {
-		return carrot;
-	}
-	public void setCarrot(boolean carrot) {
-		this.carrot = carrot;
-	}
-	public boolean getCucumber() {
-		return cucumber;
-	}
-	public void setCucumber(boolean cucumber) {
-		this.cucumber = cucumber;
-	}
-	public boolean getOnion() {
-		return onion;
-	}
-	public void setOnion(boolean onion) {
+    
 		this.onion = onion;
 	}
 	public String getDressing() {

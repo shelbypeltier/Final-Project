@@ -1,4 +1,3 @@
-
 public class Drinks extends Food{
 	private String nameOfDrink, size;
 	

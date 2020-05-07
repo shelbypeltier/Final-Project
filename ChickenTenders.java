@@ -3,6 +3,7 @@ public class ChickenTenders extends Food{
 	private String sauce;
 	private int numOfTenders;
 	public String getSauce() {
+
 		return sauce;
 	}
 	
@@ -28,6 +29,7 @@ public class ChickenTenders extends Food{
 		super();
 		this.sauce = "";
 		this.numOfTenders = 0;
+		
 	}
 
 	@Override
@@ -35,6 +37,15 @@ public class ChickenTenders extends Food{
 		return "ChickenTenders sauce=" + sauce + "/n numOfTenders=" + numOfTenders + "/n Price=" + getPrice()
 				+ "Name()=" + getName();
 	}
+
+	public double getPriceofTend() {
+		return priceofTend;
+	}
+
+	public void setPriceofTend(double priceofTend) {
+		this.priceofTend = priceofTend;
+	}
 	
 	
 }
+

@@ -27,6 +27,10 @@ import javax.swing.BoxLayout;
 import javax.swing.JTextField;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JRadioButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.UIManager;
+
 
 public class gui {
 
@@ -80,6 +84,7 @@ public class gui {
 		layeredPane1.repaint();
 		layeredPane1.revalidate();
 	}
+
 	/**
 	 * Launch the application.
 	 */
@@ -95,10 +100,7 @@ public class gui {
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
+  
 	public gui() {
 		initialize();
 	}
@@ -107,11 +109,11 @@ public class gui {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
 		for(int i=0;i < numOfTables ;i++) {
 		tables[i] = new Table(i+1);
 		}
 		
+
 		frmRegister = new JFrame();
 		frmRegister.setResizable(false);
 		frmRegister.setTitle("Register");
@@ -119,6 +121,7 @@ public class gui {
 		frmRegister.getContentPane().setLayout(null);
 		
 		layeredPane = new JLayeredPane();
+
 		layeredPane.setBounds(0, 0, 996, 673);
 		frmRegister.getContentPane().add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
@@ -130,6 +133,7 @@ public class gui {
 		JPanel panel_4_1 = new JPanel();
 		panel_4_1.setBackground(new Color(211, 211, 211));
 		Main.add(panel_4_1, BorderLayout.NORTH);
+
 		panel_4_1.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		JLabel lblNewLabel_6_1 = new JLabel("Main Menu\r\n");
@@ -139,6 +143,7 @@ public class gui {
 		panel_4_1.add(lblNewLabel_6_1);
 		
 		JLabel lblNewLabel_6 = new JLabel("Press Tab to add food items!");
+
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_6.setForeground(Color.DARK_GRAY);
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -151,7 +156,9 @@ public class gui {
 		panel_4_1.add(lblNewLabel_7);
 		
 		JPanel panel = new JPanel();
+
 		Main.add(panel, BorderLayout.CENTER);
+
 		panel.setLayout(new GridLayout(2, 3, 50, 50));
 		
 		JPanel panel_1 = new JPanel();
@@ -165,6 +172,7 @@ public class gui {
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 30));
 		lblNewLabel.setBackground(Color.WHITE);
 		panel_1.add(lblNewLabel);
+
 		JPanel sidesPanel = new JPanel();
 		JPanel saladPanel = new JPanel();
 		JPanel drinksPanel = new JPanel();
@@ -187,6 +195,7 @@ public class gui {
 			panelSwitcher(addFoodPanel);
 			}
 		});
+
 		btnCashOut.setBackground(Color.WHITE);
 		panel_2.add(btnCashOut);
 		
@@ -195,9 +204,11 @@ public class gui {
 		
 		JButton btnNewButton_1 = new JButton("Cash Out");
 		btnNewButton_1.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
+
 			}
 		});
 		panel_3.add(btnNewButton_1);
@@ -220,8 +231,10 @@ public class gui {
 		JButton btnNewButton_2 = new JButton("Tab");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				panelSwitcher1(chooseFoodPanel);
 				panelSwitcher(addFoodPanel);
+
 			}
 		});
 		btnNewButton_2.setBackground(Color.WHITE);
@@ -235,6 +248,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				panelSwitcher(addFoodPanel);
 				panelSwitcher1(cashOutPanel);
+
 			}
 		});
 		panel_3_1.add(btnNewButton_1_1);
@@ -307,6 +321,7 @@ public class gui {
 		JButton btnNewButton_1_3 = new JButton("Cash Out");
 		btnNewButton_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				panelSwitcher(addFoodPanel);
 				panelSwitcher1(cashOutPanel);
 			}
@@ -410,27 +425,33 @@ public class gui {
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnNewButton.setBounds(20, 152, 200, 175);
-		chooseFoodPanel.add(btnNewButton);
-		
+    
+		chooseFoodPanel.add(btnNewButton);		
 		JButton btnChickenTenders = new JButton("Chicken Tenders");
 		btnChickenTenders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				panelSwitcher1(chickenPanel);
+
 			}
 		});
 		btnChickenTenders.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnChickenTenders.setBounds(260, 156, 200, 175);
 		chooseFoodPanel.add(btnChickenTenders);
+
 		
 		JButton btnSides = new JButton("Sides");
 		btnSides.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				panelSwitcher1(sidesPanel);
+
 			}
 		});
 		btnSides.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		btnSides.setBounds(500, 156, 200, 175);
 		chooseFoodPanel.add(btnSides);
+
 		
 		JButton btnNewButton_8_1 = new JButton("Dessert");
 		btnNewButton_8_1.addActionListener(new ActionListener() {
@@ -441,6 +462,7 @@ public class gui {
 		btnNewButton_8_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnNewButton_8_1.setBounds(500, 383, 200, 175);
 		chooseFoodPanel.add(btnNewButton_8_1);
+
 		
 		JButton btnNewButton_7_1 = new JButton("Drinks");
 		btnNewButton_7_1.addActionListener(new ActionListener() {
@@ -533,11 +555,13 @@ public class gui {
 		textField_2.setEditable(false);
 		textField_2.setColumns(10);
 		textField_2.setBounds(506, 114, 139, 41);
+
 		cashOutPanel.add(textField_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setEditable(false);
 		textField_3.setColumns(10);
+
 		textField_3.setBounds(506, 166, 139, 41);
 		cashOutPanel.add(textField_3);
 		
@@ -1877,6 +1901,7 @@ public class gui {
 		});
 		btnNewButton_10.setBounds(119, 17, 125, 40);
 		addFoodPanel.add(btnNewButton_10);
+
 		frmRegister.setBounds(100, 100, 1000, 700);
 		frmRegister.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
