@@ -1,6 +1,6 @@
 public class Burgers extends Food{
 
-	private int numOfPatties;
+	private String numOfPatties;
 	private String typeOfCheese,bunType;
 	private String tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
 	private double price = 11.99;
@@ -9,17 +9,17 @@ public class Burgers extends Food{
 	
 	public Burgers() {
 		super();
-		this.numOfPatties = 1;
-		this.typeOfCheese = null;
-		this.bunType = null;
-		this.tomato = null;
-		this.lettuce = null;
-		this.onion = null;
-		this.pickle = null;
-		this.mayo = null;
-		this.ketchup = null;
-		this.grilledOnion = null;
-		this.mustard = null;
+		this.numOfPatties = "";
+		this.typeOfCheese = "";
+		this.bunType = "";
+		this.tomato = "";
+		this.lettuce = "";
+		this.onion = "";
+		this.pickle = "";
+		this.mayo = "";
+		this.ketchup = "";
+		this.grilledOnion = "";
+		this.mustard = "";
 		this.price = 0.00;
 		
 	}
