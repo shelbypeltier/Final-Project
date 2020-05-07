@@ -2,6 +2,7 @@
 public class ChickenTenders extends Food{
 	private String sauce;
 	private int numOfTenders;
+	private double priceofTend = 0;
 	public String getSauce() {
 
 		return sauce;
