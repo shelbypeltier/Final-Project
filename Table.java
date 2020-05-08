@@ -1,9 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Table {
-	private int tableNum;
-
-	private double totalbill = 0.0;
+	private int tableNum;private double totalbill = 0.0;
 
 	private ArrayList<Food> food = new ArrayList<Food>();
 	 
@@ -12,9 +11,6 @@ public class Table {
 	}
 	public void setTableNum(int tableNum) {
 		this.tableNum = tableNum;
-	}
-	public double getTotalbill() {
-		return totalbill;
 	}
 	public void setTotalbill(double totalbill) {
 		this.totalbill = totalbill;
@@ -35,7 +31,11 @@ public class Table {
 	}
 	@Override
 	public String toString() {
-		return "Table tableNum=" + tableNum + "/n totalbill=" + totalbill;
+		String tab = "";
+		for(int i = 0;i < food.size();i++) {
+		tab += (i+1) + ". " +food.get(i).toString() + "\n";
+		}
+		return tab;
 	}
 	
 	
