@@ -15,17 +15,11 @@ public class Salad extends Food{
 		this.onion = onion;
 		this.cheese = cheese;
 		this.crouton = crouton;
+
 		this.dressing = dressing;
 	}
 	public Salad() {
 		super();
-		this.tomato = false;
-		this.carrot = false;
-		this.cucumber = false;
-		this.onion = false;
-		this.cheese = false;
-		this.crouton = false;
-		this.dressing = "";
 	}
 	public String getDressing() {
 		return dressing;
@@ -33,7 +27,11 @@ public class Salad extends Food{
 	public void setDressing(String dressing) {
 		this.dressing = dressing;
 	}
-	
+	@Override
+	public String toString() {
+		return "Salad tomato=" + tomato + "/n carrot=" + carrot + "/n cucumber=" + cucumber + "/n onion=" + onion
+				+ "/n dressing=" + dressing + "/n getPrice()=" + getPrice() + "/n getName()=" + getName();
+	}
 	public boolean getCheese() {
 		return cheese;
 	}
@@ -63,36 +61,24 @@ public class Salad extends Food{
 	public boolean getCucumber() {
 		return cucumber;
 	}
+	public void setCucumber(boolean cucumber) {
+		this.cucumber = cucumber;
+	}
 	public boolean getOnion() {
 		return onion;
 	}
-	public void setOnion(boolean b) {
-		onion = b;
+	public void setOnion(boolean onion) {
+		this.onion = onion;
 	}
-	public void setCucumber(boolean b) {
-		cucumber = b;
+	
+	public void defaultSalad () {
+		tomato = false;
+		carrot = false; 
+		cucumber = false; 
+		onion= false; 
+		cheese= false; 
+		crouton= false; 
+		dressing = "";
 	}
-	@Override
-	public String toString() {
-		String tab = "Salad \n";
-		if(tomato) 
-			tab += "\tTomato \n";
-		if(cucumber) 
-			tab += "\tCucumber \n";
-		if(carrot) 
-			tab += "\tCarrot \n";
-		if(onion) 
-			tab += "\tOnion \n";
-		if(crouton) 
-			tab += "\tCrouton \n";
-		if(cheese) 
-			tab += "\tCheese \n";
-		if(dressing.isBlank()) {
-			tab += "\tNo Dressing \n";
-		}
-		else {
-			tab += "\t" + dressing + "\n";
-		}
-		return tab;
-	}
+	
 }

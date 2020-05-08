@@ -25,7 +25,12 @@ public class Drinks extends Food{
 
 	@Override
 	public String toString() {
-		return "\t" + size + " " + nameOfDrink + "\n";
+		return "Drinks nameOfDrink=" + nameOfDrink + "/n size=" + size + "/n getPrice()=" + getPrice() + "/n getName()="
+				+ getName();
+	}
+	public void defaultDrink () {
+		nameOfDrink = ""; 
+		size = ""; 
 	}
 	
 }
