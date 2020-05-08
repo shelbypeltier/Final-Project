@@ -25,10 +25,10 @@ public class Burgers extends Food{
 
 		
 	}
-	public Burgers(double price, String name, String numOfPatties,String typeOfCheese, String bunType,
+	public Burgers(String numOfPatties,String typeOfCheese, String bunType,
 			String tomato, String lettuce, String onion, String pickle, String mayo, String ketchup,
 			String grilledOnion, String mustard) {
-		super(price, name);
+		super();
 		this.numOfPatties = numOfPatties;
 		this.typeOfCheese = typeOfCheese;
 		this.bunType = bunType;

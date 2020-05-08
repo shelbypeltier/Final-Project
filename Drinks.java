@@ -1,6 +1,12 @@
 public class Drinks extends Food{
 	private String nameOfDrink, size;
 	
+	public Drinks(String nameOfDrink, String size) {
+		super();
+		this.nameOfDrink = nameOfDrink;
+		this.size = size;
+	}
+	
 	public String getNameOfDrink() {
 		return nameOfDrink;
 	}
@@ -25,7 +31,7 @@ public class Drinks extends Food{
 
 	@Override
 	public String toString() {
-		return "\t" + size + " " + nameOfDrink + "\n";
+		return  size + " " + nameOfDrink + "\n";
 	}
 
 	public void defaultDrink() {

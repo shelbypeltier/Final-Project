@@ -8,7 +8,9 @@ public class Food {
 		this.price = price;
 		this.name = name;
 	}
-
+	public Food(String name) {
+		this.name = name;
+	}
 	public Food() {
 		this.price = 0.0;
 		this.name = "";	
@@ -32,8 +34,7 @@ public class Food {
 
 	@Override
 	public String toString() {
-		return //"Food price=" + price + "/n name=" + name; 
-				"Test String";
+		return "Food price=" + price + "/n name=" + name;
 	}
 
 	

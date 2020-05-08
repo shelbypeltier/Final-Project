@@ -20,8 +20,8 @@ public class ChickenTenders extends Food{
 		this.numOfTenders = numOfTenders;
 	}
 	
-	public ChickenTenders(double price, String name,String sauce, int numOfTenders) {
-		super(price, name);
+	public ChickenTenders(String sauce, int numOfTenders) {
+		super();
 		this.sauce = sauce;
 		this.numOfTenders = numOfTenders;
 	}
@@ -37,7 +37,7 @@ public class ChickenTenders extends Food{
 	public String toString() {
 		String tab = getNumOfTenders() + "Chicken Tenders\n"; 
 		if(!(sauce.isEmpty())) {		
-			tab += sauce;
+			tab += "\t" + sauce;
 		}
 		return tab;		
 	}

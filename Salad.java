@@ -5,10 +5,9 @@ public class Salad extends Food{
 	private String dressing;
 	
 	
-	public Salad(double price, String name, boolean tomato, boolean carrot, boolean cucumber, boolean onion,
+	public Salad( boolean tomato, boolean carrot, boolean cucumber, boolean onion,
 			boolean cheese, boolean crouton, String dressing) {
-
-		super(price, name);
+		super();
 		this.tomato = tomato;
 		this.carrot = carrot;
 		this.cucumber = cucumber;
