@@ -69,23 +69,6 @@ public class gui {
 	private int numOfSides = 0;
 	private int numOfSalads = 0;
 	
-	public void setStringDrink(String name) {
-		if(!(tempDrink.getNameOfDrink().equalsIgnoreCase(name))) {
-			tempDrink.setNameOfDrink(name);
-			}
-			else {
-				tempDrink.setNameOfDrink("");
-			}
-	}
-	public void setNameDessert(String name) {
-		if(!(tempDessert.getName().equalsIgnoreCase(name))) {
-			tempDessert.setName(name);
-			}
-			else {
-				tempDessert.setName("");
-			}
-	}
-
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
 		layeredPane.add(panel); 
@@ -330,8 +313,10 @@ public class gui {
 		JButton btnNewButton_1_2 = new JButton("Cash Out");
 		btnNewButton_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panelSwitcher(addFoodPanel);
+				numOfTable = 2;
 				panelSwitcher1(cashOutPanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		panel_3_2.add(btnNewButton_1_2);
@@ -374,9 +359,10 @@ public class gui {
 		JButton btnNewButton_1_3 = new JButton("Cash Out");
 		btnNewButton_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				panelSwitcher(addFoodPanel);
+				numOfTable = 3;
 				panelSwitcher1(cashOutPanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		panel_3_3.add(btnNewButton_1_3);
@@ -419,8 +405,10 @@ public class gui {
 		JButton btnNewButton_1_4 = new JButton("Cash Out ");
 		btnNewButton_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panelSwitcher(addFoodPanel);
+				numOfTable = 4;
 				panelSwitcher1(cashOutPanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		panel_3_4.add(btnNewButton_1_4);
@@ -463,8 +451,10 @@ public class gui {
 		JButton btnNewButton_1_5 = new JButton("Cash Out");
 		btnNewButton_1_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panelSwitcher(addFoodPanel);
+				numOfTable = 5;
 				panelSwitcher1(cashOutPanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		panel_3_5.add(btnNewButton_1_5);
@@ -1004,6 +994,7 @@ public class gui {
 		btnNewButton_12_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					tempBurger.setNumOfPatties("quarterPound");
+					textArea.append("Quarter Pound Pattie Selected\n");
 			}
 		});
 		btnNewButton_12_3.setBounds(10, 24, 154, 52);
@@ -1013,6 +1004,7 @@ public class gui {
 		btnNewButton_12_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tempBurger.setNumOfPatties("halfPound");
+				textArea.append("Half Pound Pattie Selected\n");
 			}
 		});
 		btnNewButton_12_1_1.setBounds(197, 24, 154, 52);
@@ -1029,9 +1021,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempBurger.getBunType().equalsIgnoreCase("hambBun"))) {
 					tempBurger.setBunType("hambBun");
+					textArea.append("Plain Bun Selected\n");
 					}
 					else {
 						tempBurger.setBunType("");
+						textArea.append("Plain Bun Deselected\n");
 					}
 			}
 		});
@@ -1043,9 +1037,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempBurger.getBunType().equalsIgnoreCase("sourDough"))) {
 					tempBurger.setBunType("sourDough");
+					textArea.append("Sour Dough Selected\n");
 					}
 					else {
 						tempBurger.setBunType("");
+						textArea.append("Sour Dough Deselected\n");
 					}
 			}
 		});
@@ -1057,13 +1053,15 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempBurger.getBunType().equalsIgnoreCase("rye"))) {
 					tempBurger.setBunType("rye");
+					textArea.append("Rye Selected\n");
 					}
 					else {
 						tempBurger.setBunType("");
+						textArea.append("Rye Deselected\n");
 					}
 			}
 		});
-		btnNewButton_12_1_1_1_1.setBounds(361, 24, 154, 52);
+		btnNewButton_12_1_1_1_1.setBounds(380, 24, 154, 52);
 		panel_7_1_1_1.add(btnNewButton_12_1_1_1_1);
 		
 		JLabel lblNewLabel_12 = new JLabel("Burgers");
@@ -1856,9 +1854,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("small"))) {
 					tempDrink.setSize("small");
+					textArea.append("Small Selected\n");
 					}
 					else {
 						tempDrink.setSize("");
+						textArea.append("Small Deselected\n");
 					}
 			}
 		});
@@ -1870,9 +1870,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("regular"))) {
 					tempDrink.setSize("regular");
+					textArea.append("Regular Selected\n");
 					}
 					else {
 						tempDrink.setSize("");
+						textArea.append("Regular Deselected\n");
 					}
 			}
 		});
@@ -1884,9 +1886,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("large"))) {
 					tempDrink.setSize("large");
+					textArea.append("Large Selected\n");
 					}
 					else {
 						tempDrink.setSize("");
+						textArea.append("Large Deselected\n");
 					}
 			}
 		});
@@ -1902,7 +1906,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_3 = new JButton("Pepsi");
 		btnNewButton_12_4_1_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink("Pepsi");
+				if(!(tempDrink.getName().equalsIgnoreCase("Pepsi"))) {
+					tempDrink.setName("Pepsi");
+					textArea.append("Pepsi Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Pepsi Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_3.setBounds(10, 25, 154, 52);
@@ -1911,7 +1922,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_3 = new JButton("Diet Pepsi");
 		btnNewButton_12_4_1_1_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink("diet Pepsi");
+				if(!(tempDrink.getName().equalsIgnoreCase("Diet Pepsi"))) {
+					tempDrink.setName("Diet Pepsi");
+					textArea.append("Diet Pepsi Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Diet Pepsi Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_1_3.setBounds(188, 25, 154, 52);
@@ -1920,7 +1938,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_5 = new JButton("Mtn Dew");
 		btnNewButton_12_4_1_1_1_1_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink(btnNewButton_12_4_1_1_1_1_5.getText());
+				if(!(tempDrink.getName().equalsIgnoreCase("Mtn Dew"))) {
+					tempDrink.setName("Mtn Dew");
+					textArea.append("Mtn Dew Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Mtn Dew Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_1_1_5.setBounds(352, 25, 154, 52);
@@ -1929,7 +1954,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_1_2 = new JButton("Rootbeer");
 		btnNewButton_12_4_1_1_1_1_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink(btnNewButton_12_4_1_1_1_1_1_2.getText());
+				if(!(tempDrink.getName().equalsIgnoreCase("Rootbeer"))) {
+					tempDrink.setName("Rootbeer");
+					textArea.append("Rootbeer Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Rootbeer Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_1_1_1_2.setBounds(516, 25, 154, 52);
@@ -1938,7 +1970,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_4 = new JButton("Dr.Pepper");
 		btnNewButton_12_4_1_1_1_1_2_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink(btnNewButton_12_4_1_1_1_1_2_4.getText());
+				if(!(tempDrink.getName().equalsIgnoreCase("Dr.Pepper"))) {
+					tempDrink.setName("Dr.Pepper");
+					textArea.append("Dr.Pepper Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Dr.Pepper Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_1_1_2_4.setBounds(10, 113, 154, 52);
@@ -1947,7 +1986,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_3_2 = new JButton("Sprite");
 		btnNewButton_12_4_1_1_1_1_3_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink(btnNewButton_12_4_1_1_1_1_3_2.getText());
+				if(!(tempDrink.getName().equalsIgnoreCase("Sprite"))) {
+					tempDrink.setName("Sprite");
+					textArea.append("Sprite Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Sprite Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_1_1_3_2.setBounds(188, 113, 154, 52);
@@ -1956,7 +2002,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_2_2 = new JButton("Ice Tea");
 		btnNewButton_12_4_1_1_1_1_2_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink(btnNewButton_12_4_1_1_1_1_2_2_2.getText());
+				if(!(tempDrink.getName().equalsIgnoreCase("Ice Tea"))) {
+					tempDrink.setName("Ice Tea");
+					textArea.append("Ice Tea Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Ice Tea Deselected\n");
+					}
 			}
 		});
 		btnNewButton_12_4_1_1_1_1_2_2_2.setBounds(352, 113, 154, 52);
@@ -1965,7 +2018,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_3_2 = new JButton("Milk");
 		btnNewButton_12_4_1_1_1_1_2_3_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setStringDrink(btnNewButton_12_4_1_1_1_1_2_3_2.getText());
+				if(!(tempDrink.getName().equalsIgnoreCase("Milk"))) {
+					tempDrink.setName("Milk");
+					textArea.append("Milk Selected\n");
+					}
+					else {
+						tempDrink.setName("");
+						textArea.append("Milk Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_1_1_1_2_3_2.setBounds(516, 113, 154, 52);
@@ -1987,6 +2047,7 @@ public class gui {
 				textArea.append(tempDrink.toString());
 				drink.add(new Drinks(tempDrink.getNameOfDrink(),tempDrink.getSize()));
 				tables[numOfTable].addFood(drink.get(numOfDrink));
+				tempDrink.defaultDrink();
 				numOfDrink ++;
 			}
 		});
@@ -2003,7 +2064,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_4_1_1 = new JButton("Chocolate");
 		btnNewButton_12_4_1_4_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setNameDessert("chocolateShake");
+				if(!(tempDessert.getName().equalsIgnoreCase("chocolateShake"))) {
+					tempDessert.setName("chocolateShake");
+					textArea.append("Chocolate Shake Selected\n");
+					}
+					else {
+						tempDessert.setName("");
+						textArea.append("Chocolate Shake Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_4_1_1.setBounds(10, 35, 154, 52);
@@ -2012,7 +2080,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_4_1_2 = new JButton("Strawberry");
 		btnNewButton_12_4_1_4_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setNameDessert("strawberryShake");
+				if(!(tempDessert.getName().equalsIgnoreCase("StrawberryShake"))) {
+					tempDessert.setName("StrawberryShake");
+					textArea.append("Strawberry Shake Selected\n");
+					}
+					else {
+						tempDessert.setName("");
+						textArea.append("Strawberry Shake Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_4_1_2.setBounds(188, 35, 154, 52);
@@ -2021,7 +2096,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_4_1_3 = new JButton("Vanilla");
 		btnNewButton_12_4_1_4_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setNameDessert("vanillaShake");
+				if(!(tempDessert.getName().equalsIgnoreCase("VanillaShake"))) {
+					tempDessert.setName("VanillaShake");
+					textArea.append("Vanilla Shake Selected\n");
+					}
+					else {
+						tempDessert.setName("");
+						textArea.append("Vanilla Shake Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_4_1_3.setBounds(371, 35, 154, 52);
@@ -2044,7 +2126,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_4_1_1_1 = new JButton("Chocolate");
 		btnNewButton_12_4_1_4_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setNameDessert("chocolateSundae");
+				if(!(tempDessert.getName().equalsIgnoreCase("ChocolateSundae"))) {
+					tempDessert.setName("ChocolateSundae");
+					textArea.append("Chocolate Sundae Selected\n");
+					}
+					else {
+						tempDessert.setName("");
+						textArea.append("Chocolate Sundae Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_4_1_1_1.setBounds(10, 35, 154, 52);
@@ -2053,7 +2142,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_4_1_2_1 = new JButton("Strawberry");
 		btnNewButton_12_4_1_4_1_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setNameDessert("strawberrySundae");
+				if(!(tempDessert.getName().equalsIgnoreCase("StrawberrySundae"))) {
+					tempDessert.setName("StrawberrySundae");
+					textArea.append("Strawberry Sundae Selected\n");
+					}
+					else {
+						tempDessert.setName("");
+						textArea.append("Strawberry Sundae Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_4_1_2_1.setBounds(188, 35, 154, 52);
@@ -2062,7 +2158,14 @@ public class gui {
 		JButton btnNewButton_12_4_1_4_1_3_1 = new JButton("Vanilla");
 		btnNewButton_12_4_1_4_1_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setNameDessert("vanillaSundae");
+				if(!(tempDessert.getName().equalsIgnoreCase("VanillaSundae"))) {
+					tempDessert.setName("VanillaSundae");
+					textArea.append("Vanilla Sundae Selected\n");
+					}
+					else {
+						tempDessert.setName("");
+						textArea.append("Vanilla Sundae Deselected\n");
+					};
 			}
 		});
 		btnNewButton_12_4_1_4_1_3_1.setBounds(371, 35, 154, 52);
