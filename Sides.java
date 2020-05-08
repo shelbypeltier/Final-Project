@@ -5,8 +5,8 @@ public class Sides extends Food{
 		super();
 	}
 
-	public Sides(double price, String name) {
-		super(price, name);
+	public Sides(String name) {
+		super (name);
 	}
 	
 	@Override

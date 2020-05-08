@@ -7,13 +7,13 @@
 		}
 
 
-		public Dessert(double price, String name) {
-			super(price, name);
+		public Dessert(String name) {
+			super(name);
 		}
 
 		@Override
 		public String toString() {
-			return "\t" + getName() + "\n";
+			return  getName() + "\n";
 		}
 
 		public double getPriceofdessert() {
