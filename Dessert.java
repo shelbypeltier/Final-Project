@@ -23,6 +23,13 @@
 		public void setPriceofdessert(double priceofdessert) {
 			this.priceofdessert = priceofdessert;
 		}
+
+
+		public void defaultDessert() {
+			price = 0; 
+			name = ""; 
+			
+		}
 		
 		
 	}

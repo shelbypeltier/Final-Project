@@ -87,12 +87,21 @@ public class Salad extends Food{
 			tab += "\tCrouton \n";
 		if(cheese) 
 			tab += "\tCheese \n";
-		if(dressing.isBlank()) {
+		if(dressing.isEmpty()) {
 			tab += "\tNo Dressing \n";
 		}
 		else {
 			tab += "\t" + dressing + "\n";
 		}
 		return tab;
+	}
+	public void defaultSalad() {
+		this.tomato = false;
+		this.carrot = false;
+		this.cucumber = false;
+		this.onion = false;
+		this.cheese = false;
+		this.crouton = false;
+		this.dressing = "";
 	}
 }

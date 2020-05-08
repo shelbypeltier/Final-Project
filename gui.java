@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.border.TitledBorder;
@@ -46,7 +47,7 @@ public class gui {
 	private JTextField textField_1;
 	private JTextField txtTest;
 	private ChickenTenders tempChickenTenders = new ChickenTenders();
-	private Dessert tempDessert = new Dessert();
+	private Dessert tempDessert = new Dessert ();
 	private Drinks tempDrink = new Drinks();
 	private Salad tempSalad = new Salad();
 	private Burgers tempBurger = new Burgers();
@@ -225,6 +226,8 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
+				numOfTable = 0;
+				textArea.setText(tables[numOfTable].toString());
 
 			}
 		});

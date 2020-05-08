@@ -36,7 +36,7 @@ public class ChickenTenders extends Food{
 	@Override
 	public String toString() {
 		String tab = getNumOfTenders() + "Chicken Tenders\n"; 
-		if(!(sauce.isBlank())) {		
+		if(!(sauce.isEmpty())) {		
 			tab += sauce;
 		}
 		return tab;		
@@ -48,6 +48,12 @@ public class ChickenTenders extends Food{
 
 	public void setPriceofTend(double priceofTend) {
 		this.priceofTend = priceofTend;
+	}
+
+	public void defaultTenders() {
+		sauce = "";
+		numOfTenders = 0;
+		priceofTend = 0;
 	}
 	
 	

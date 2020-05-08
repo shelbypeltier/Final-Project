@@ -27,5 +27,11 @@ public class Drinks extends Food{
 	public String toString() {
 		return "\t" + size + " " + nameOfDrink + "\n";
 	}
+
+	public void defaultDrink() {
+		nameOfDrink = "";
+		size = "";
+		
+	}
 	
 }

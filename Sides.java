@@ -37,5 +37,11 @@ public class Sides extends Food{
 	public String toString() {
 		return getName() + "\n";
 	}
+
+	public void defaultSides() {
+		price = 0;
+		name = "";
+		
+	}
 	
 }

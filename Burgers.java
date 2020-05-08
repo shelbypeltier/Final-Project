@@ -148,33 +148,48 @@ public class Burgers extends Food{
 			tab += "\tsourdough sub \n";
 			break;
 	}
-		if(!(tomato.isBlank())) {
+		if(!(tomato.isEmpty())) {
 			tab += "\t" + tomato + "\n";
 		}
-		if(!(onion.isBlank())) {
+		if(!(onion.isEmpty())) {
 			tab += "\t" + onion + "\n";
 		}
-		if(!(lettuce.isBlank())) {
+		if(!(lettuce.isEmpty())) {
 			tab += "\t" + lettuce + "\n";
 		}
-		if(!(mayo.isBlank())) {
+		if(!(mayo.isEmpty())) {
 			tab += "\t" + mayo + "\n";
 		}
-		if(!(pickle.isBlank())) {
+		if(!(pickle.isEmpty())) {
 			tab += "\t" + pickle + "\n";
 		}
-		if(!(ketchup.isBlank())) {
+		if(!(ketchup.isEmpty())) {
 			tab += "\t" + ketchup + "\n";
 		}
-		if(!(mustard.isBlank())) {
+		if(!(mustard.isEmpty())) {
 			tab += "\t" + mustard + "\n";
 		}
-		if(tomato.isBlank() & onion.isBlank() & lettuce.isBlank() & mayo.isBlank() & pickle.isBlank() & ketchup.isBlank() & mustard.isBlank())
+		if(tomato.isEmpty() & onion.isEmpty() & lettuce.isEmpty() & mayo.isEmpty() & pickle.isEmpty() & ketchup.isEmpty() & mustard.isEmpty())
 			tab += "\tPlain \n";
 		return tab;
 	}
+		public void defaultBurger () {
+			this.numOfPatties = "";
+			this.typeOfCheese = "";
+			this.bunType = "";
+			this.tomato = "";
+			this.lettuce = "";
+			this.onion = "";
+			this.pickle = "";
+			this.mayo = "";
+			this.ketchup = "";
+			this.grilledOnion = "";
+			this.mustard = "";
+			this.price = 0.00;
+		}
+		
+	}
 	
 	
-}
 
 
