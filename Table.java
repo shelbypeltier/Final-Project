@@ -32,7 +32,10 @@ public class Table {
 	public Table(int tableNum) {
 		super();
 		this.tableNum = tableNum;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/shelbypeltier/Final-Project
 	}
 	@Override
 	public String toString() {
