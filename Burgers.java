@@ -20,11 +20,8 @@ public class Burgers extends Food{
 		this.ketchup = "";
 		this.grilledOnion = "";
 		this.mustard = "";
-<<<<<<< HEAD
 		this.price = 9.99;
-=======
-		this.price = 0.00;
->>>>>>> branch 'master' of https://github.com/shelbypeltier/Final-Project
+
 		
 	}
 	public Burgers(double price, String name, String numOfPatties,String typeOfCheese, String bunType,
