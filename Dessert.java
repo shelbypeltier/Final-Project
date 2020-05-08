@@ -1,6 +1,6 @@
 
 	public class Dessert extends Food{
-	private double priceOfDessert=5.00;
+	private double priceofdessert=5.00;
 
 		public Dessert() {
 			super();
@@ -13,19 +13,16 @@
 
 		@Override
 		public String toString() {
-			return "Dessert Price =" + getPrice() + "/n Name=" + getName();
+			return "\t" + getName() + "\n";
 		}
 
 		public double getPriceofdessert() {
-			return priceOfDessert;
+			return priceofdessert;
 		}
 
 		public void setPriceofdessert(double priceofdessert) {
-			this.priceOfDessert = priceofdessert;
+			this.priceofdessert = priceofdessert;
 		}
 		
-		public void defaultDessert () {
-			priceOfDessert = 5.00; 
-		}
 		
 	}

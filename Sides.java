@@ -35,11 +35,7 @@ public class Sides extends Food{
 
 	@Override
 	public String toString() {
-		return "Added " + name + " to table \n";
+		return getName() + "\n";
 	}
 	
-	public void defaultSides() {
-		// TODO Auto-generated method stub
-		
-	}
 }
