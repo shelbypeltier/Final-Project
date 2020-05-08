@@ -29,10 +29,9 @@ public class Table {
 		this.food.remove(food);
 	}
 
-	public Table(int tableNum, double totalbill) {
+	public Table(int tableNum) {
 		super();
 		this.tableNum = tableNum;
-		this.totalbill = totalbill;
 
 	}
 	@Override

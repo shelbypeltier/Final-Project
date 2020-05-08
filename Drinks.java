@@ -28,5 +28,9 @@ public class Drinks extends Food{
 		return "Drinks nameOfDrink=" + nameOfDrink + "/n size=" + size + "/n getPrice()=" + getPrice() + "/n getName()="
 				+ getName();
 	}
+	public void defaultDrink () {
+		nameOfDrink = ""; 
+		size = ""; 
+	}
 	
 }

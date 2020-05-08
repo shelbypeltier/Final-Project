@@ -3,6 +3,7 @@ public class ChickenTenders extends Food{
 	private String sauce;
 	private int numOfTenders;
 	private double priceofTend = 0;
+	protected int getNumOfTenders; 
 	public String getSauce() {
 
 		return sauce;
@@ -16,8 +17,8 @@ public class ChickenTenders extends Food{
 		return numOfTenders;
 	}
 	
-	public void setNumOfTenders(int numOfTenders) {
-		this.numOfTenders = numOfTenders;
+	public void setNumOfTenders(int tend) {
+		this.numOfTenders = tend;
 	}
 	
 	public ChickenTenders(double price, String name,String sauce, int numOfTenders) {
@@ -35,9 +36,13 @@ public class ChickenTenders extends Food{
 
 	@Override
 	public String toString() {
-		return "ChickenTenders sauce=" + sauce + "/n numOfTenders=" + numOfTenders + "/n Price=" + getPrice()
-				+ "Name()=" + getName();
+		if (sauce.equalsIgnoreCase("")) {
+		return numOfTenders + " pc with no sauce" + "\n" ; 
+		} else {
+			return numOfTenders + " pc with " + sauce + "\n";
+		}
 	}
+	//Testing to String NOT FINAL
 
 	public double getPriceofTend() {
 		return priceofTend;
@@ -47,6 +52,11 @@ public class ChickenTenders extends Food{
 		this.priceofTend = priceofTend;
 	}
 	
+	public void defaultTenders () {
+		sauce = "";
+		numOfTenders = 0;
+		priceofTend = 0;
+	}
 	
 }
 

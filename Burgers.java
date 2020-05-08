@@ -1,29 +1,29 @@
 public class Burgers extends Food{
 
-	private int numOfPatties;
+	private String numOfPatties;
 	private String typeOfCheese,bunType;
 	private String tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
-	private double price = 11.99;
+	private double price = 9.99;
 
 	//i made the condiments into String so 0=none 1=easy 2=normal 3=extra let me know if this is good
 	
 	public Burgers() {
 		super();
-		this.numOfPatties = 1;
-		this.typeOfCheese = null;
-		this.bunType = null;
-		this.tomato = null;
-		this.lettuce = null;
-		this.onion = null;
-		this.pickle = null;
-		this.mayo = null;
-		this.ketchup = null;
-		this.grilledOnion = null;
-		this.mustard = null;
-		this.price = 0.00;
+		this.numOfPatties = "";
+		this.typeOfCheese = "";
+		this.bunType = "";
+		this.tomato = "";
+		this.lettuce = "";
+		this.onion = "";
+		this.pickle = "";
+		this.mayo = "";
+		this.ketchup = "";
+		this.grilledOnion = "";
+		this.mustard = "";
+		this.price = 9.99;
 		
 	}
-	public Burgers(double price, String name, int numOfPatties,String typeOfCheese, String bunType,
+	public Burgers(double price, String name, String numOfPatties,String typeOfCheese, String bunType,
 
 			String tomato, String lettuce, String onion, String pickle, String mayo, String ketchup,
 			String grilledOnion, String mustard) {
@@ -113,14 +113,31 @@ public class Burgers extends Food{
 		}
 		return price;
 	}
+	
+	public void defaultBurger () {
+		this.numOfPatties = "";
+		this.typeOfCheese = "";
+		this.bunType = "";
+		this.tomato = "";
+		this.lettuce = "";
+		this.onion = "";
+		this.pickle = "";
+		this.mayo = "";
+		this.ketchup = "";
+		this.grilledOnion = "";
+		this.mustard = "";
+		this.price = 0.00;
+	}
 		
 	
 	@Override
 	public String toString() {
-		return "";
+		return "Pattie: " + numOfPatties + "\n Cheese: " + typeOfCheese + "\n Bun: " + bunType
+				+ "\n tomato: " + tomato + "\n lettuce:" + lettuce + "\n onion:" + onion + "\n pickle;" + pickle + "\n mayo:"
+				+ mayo + "\n ketchup:" + ketchup + "\n grilledOnion:" + grilledOnion + "\n mustard:" + mustard + "\n price:"
+				+ price ;
 	}
-	
-	
+//testing to String NOT FINAL
 }
 
 

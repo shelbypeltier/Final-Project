@@ -20,8 +20,6 @@ public class Salad extends Food{
 	}
 	public Salad() {
 		super();
-    
-		this.onion = onion;
 	}
 	public String getDressing() {
 		return dressing;
@@ -47,18 +45,40 @@ public class Salad extends Food{
 		this.crouton = crouton;
 	}
 	public boolean getCarrot() {
-		return Carrot; 
+		return carrot; 
 	}
 	public void setCarrot(boolean carrot) {
-		this.Carrot = carrot; 
+		this.carrot = carrot; 
 		
 	}
 	public boolean getTomato() {
-		return Tomato;
+		return tomato;
 	}
 	public void setTomato(boolean tomato) {
-		this.Tomato = tomato; 
+		this.tomato = tomato; 
 		
+	}
+	public boolean getCucumber() {
+		return cucumber;
+	}
+	public void setCucumber(boolean cucumber) {
+		this.cucumber = cucumber;
+	}
+	public boolean getOnion() {
+		return onion;
+	}
+	public void setOnion(boolean onion) {
+		this.onion = onion;
+	}
+	
+	public void defaultSalad () {
+		tomato = false;
+		carrot = false; 
+		cucumber = false; 
+		onion= false; 
+		cheese= false; 
+		crouton= false; 
+		dressing = "";
 	}
 	
 }
