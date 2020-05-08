@@ -3,7 +3,7 @@ public class Burgers extends Food{
 	private String numOfPatties;
 	private String typeOfCheese,bunType;
 	private String tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
-	private double price = 9.99;
+	private double price = 11.99;
 
 	//i made the condiments into String so 0=none 1=easy 2=normal 3=extra let me know if this is good
 	
@@ -20,15 +20,10 @@ public class Burgers extends Food{
 		this.ketchup = "";
 		this.grilledOnion = "";
 		this.mustard = "";
-<<<<<<< HEAD
-		this.price = 9.99;
-=======
 		this.price = 0.00;
->>>>>>> branch 'master' of https://github.com/shelbypeltier/Final-Project
 		
 	}
 	public Burgers(double price, String name, String numOfPatties,String typeOfCheese, String bunType,
-
 			String tomato, String lettuce, String onion, String pickle, String mayo, String ketchup,
 			String grilledOnion, String mustard) {
 		super(price, name);
@@ -118,30 +113,66 @@ public class Burgers extends Food{
 		return price;
 	}
 	
-	public void defaultBurger () {
-		this.numOfPatties = "";
-		this.typeOfCheese = "";
-		this.bunType = "";
-		this.tomato = "";
-		this.lettuce = "";
-		this.onion = "";
-		this.pickle = "";
-		this.mayo = "";
-		this.ketchup = "";
-		this.grilledOnion = "";
-		this.mustard = "";
-		this.price = 0.00;
-	}
-		
-	
 	@Override
 	public String toString() {
-		return "Pattie: " + numOfPatties + "\n Cheese: " + typeOfCheese + "\n Bun: " + bunType
-				+ "\n tomato: " + tomato + "\n lettuce:" + lettuce + "\n onion:" + onion + "\n pickle;" + pickle + "\n mayo:"
-				+ mayo + "\n ketchup:" + ketchup + "\n grilledOnion:" + grilledOnion + "\n mustard:" + mustard + "\n price:"
-				+ price ;
+		String tab = "";
+		if(numOfPatties.equals("quarterPound")) {
+			tab += "1/4 Burger \n";
+		}
+		else {
+			tab += "1/2 Burger \n";
+		}
+		switch(typeOfCheese.toLowerCase()){
+			case("amercan"):
+				tab += "\tAmerican Cheese \n";
+				break;
+			case("cheddar"):
+				tab += "\tCheddar Cheese \n";
+			    break;
+			case("swiss"):
+				tab += "\tSwiss Cheese \n";
+				break;
+			case("colbyjack"):
+				tab += "\tColbyJack Cheese \n";
+				break;
+		}
+		switch(bunType.toLowerCase()){
+		case("hambBun"):
+			break;
+		case("rye"):
+			tab += "\trye sub \n";
+		    break;
+		case("sourdough"):
+			tab += "\tsourdough sub \n";
+			break;
 	}
-//testing to String NOT FINAL
+		if(!(tomato.isBlank())) {
+			tab += "\t" + tomato + "\n";
+		}
+		if(!(onion.isBlank())) {
+			tab += "\t" + onion + "\n";
+		}
+		if(!(lettuce.isBlank())) {
+			tab += "\t" + lettuce + "\n";
+		}
+		if(!(mayo.isBlank())) {
+			tab += "\t" + mayo + "\n";
+		}
+		if(!(pickle.isBlank())) {
+			tab += "\t" + pickle + "\n";
+		}
+		if(!(ketchup.isBlank())) {
+			tab += "\t" + ketchup + "\n";
+		}
+		if(!(mustard.isBlank())) {
+			tab += "\t" + mustard + "\n";
+		}
+		if(tomato.isBlank() & onion.isBlank() & lettuce.isBlank() & mayo.isBlank() & pickle.isBlank() & ketchup.isBlank() & mustard.isBlank())
+			tab += "\tPlain \n";
+		return tab;
+	}
+	
+	
 }
 
 
