@@ -43,6 +43,14 @@ public class ChickenTenders extends Food{
 	}
 
 	public double getPrice() {
+		switch (numOfTenders){
+		case 2 : priceofTend = 3;
+		break;
+		case 4 : priceofTend = 4;
+		break;
+		case 8 : priceofTend = 7;
+		break;
+		}
 		return priceofTend;
 	}
 

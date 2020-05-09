@@ -1133,13 +1133,12 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if((tempChickenTenders.getNumOfTenders() != 2)) {
 					tempChickenTenders.setNumOfTenders(2);
-					textArea.append("2 pc chicken tenders\n");
+					textArea.append("2 pc chicken tenders selected\n");
 					}
 					else {
 						tempChickenTenders.setNumOfTenders(0);
-					}
-				textArea.append("2 pc Selected");
-				textArea.append("2 pc Chicken Tenders Removed\n");
+						textArea.append("2 pc Chicken Tenders Removed\n");
+					}	
 			}
 		});
 		btnNewButton_12_4_1.setBounds(10, 41, 154, 52);
