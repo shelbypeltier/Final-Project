@@ -191,6 +191,7 @@ public class gui {
 		tabScreen.add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
 		textArea.setRows(30);
 		textArea.setColumns(30);
 		scrollPane.setViewportView(textArea);
@@ -2213,6 +2214,7 @@ public class gui {
 		dessertPanel.add(btnNewButton_13);
 		btnNewButton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				textArea.append(tempDessert.toString());
 				dessert.add(new Dessert(tempDessert.getName()));
 				tables[numOfTable].addFood(dessert.get(numOfDessert));
 				numOfDessert++;

@@ -1,6 +1,5 @@
 
 	public class Dessert extends Food{
-	private double priceofdessert=5.00;
 
 		public Dessert() {
 			super();
@@ -17,13 +16,18 @@
 		}
 
 		public double getPrice() {
-			return priceofdessert;
+			switch (name) {
+			case "chocolateShake" :
+			case "StrawberryShake":
+			case "VanillaShake": price = 2.50;
+			break;
+			case "ChocolateSundae":
+			case "StrawberrySundae":
+			case "VanillaSundae": price = 2;
+			break;
+			}
+			return price;
 		}
-
-		public void setPriceofdessert(double priceofdessert) {
-			this.priceofdessert = priceofdessert;
-		}
-
 
 		public void defaultDessert() {
 			price = 0; 
