@@ -16,7 +16,7 @@
 			return  getName() + "\n";
 		}
 
-		public double getPriceofdessert() {
+		public double getPrice() {
 			return priceofdessert;
 		}
 

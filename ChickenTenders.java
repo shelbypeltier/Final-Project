@@ -42,7 +42,7 @@ public class ChickenTenders extends Food{
 		return tab;		
 	}
 
-	public double getPriceofTend() {
+	public double getPrice() {
 		return priceofTend;
 	}
 

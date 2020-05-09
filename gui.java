@@ -42,7 +42,7 @@ public class gui {
 	private JPanel Main;
 	private JTextArea textField;
 	private JTextField txtEnterInCash;
-	private JTextField textField_2;
+	private JTextArea textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_1;
@@ -207,6 +207,7 @@ public class gui {
 			tempDrink.defaultDrink();
 			tempSalad.defaultSalad(); 
 			tempSides.defaultSides(); 
+			textArea.setText(tables[numOfTable].toString());
 			}
 		});
 
@@ -225,6 +226,8 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textField.setText(tables[numOfTable].getTotalBill()+"");
+				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
 			}
 		});
 		panel_3.add(btnNewButton_1);
@@ -256,6 +259,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		btnNewButton_2.setBackground(Color.WHITE);
@@ -272,6 +276,8 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textField.setText(tables[numOfTable].getTotalBill()+"");
+				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
 			}
 		});
 		panel_3_1.add(btnNewButton_1_1);
@@ -303,6 +309,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		btnNewButton_3.setBackground(Color.WHITE);
@@ -319,6 +326,8 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textField.setText(tables[numOfTable].getTotalBill()+"");
+				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
 			}
 		});
 		panel_3_2.add(btnNewButton_1_2);
@@ -350,6 +359,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		btnNewButton_4.setBackground(Color.WHITE);
@@ -366,6 +376,8 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textField.setText(tables[numOfTable].getTotalBill()+"");
+				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
 			}
 		});
 		panel_3_3.add(btnNewButton_1_3);
@@ -397,6 +409,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		btnNewButton_5.setBackground(Color.WHITE);
@@ -413,6 +426,8 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textField.setText(tables[numOfTable].getTotalBill()+"");
+				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
 			}
 		});
 		panel_3_4.add(btnNewButton_1_4);
@@ -444,6 +459,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				textArea.setText(tables[numOfTable].toString());
 			}
 		});
 		btnNewButton_6.setBackground(Color.WHITE);
@@ -460,6 +476,8 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textField.setText(tables[numOfTable].getTotalBill()+"");
+				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
 			}
 		});
 		panel_3_5.add(btnNewButton_1_5);
@@ -573,7 +591,7 @@ public class gui {
 		cashOutPanel.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_10_1 = new JLabel("Total with tax: ");
+		JLabel lblNewLabel_10_1 = new JLabel("Tax: ");
 		lblNewLabel_10_1.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel_10_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_10_1.setBounds(134, 109, 343, 52);
@@ -613,7 +631,7 @@ public class gui {
 		cashOutPanel.add(txtEnterInCash);
 		txtEnterInCash.setColumns(10);
 		
-		textField_2 = new JTextField();
+		textField_2 = new JTextArea();
 		textField_2.setEditable(false);
 		textField_2.setColumns(10);
 		textField_2.setBounds(506, 114, 139, 41);
@@ -621,10 +639,13 @@ public class gui {
 		cashOutPanel.add(textField_2);
 		
 		textField_3 = new JTextField();
-		textField_3.setEditable(false);
 		textField_3.setColumns(10);
-
 		textField_3.setBounds(506, 166, 139, 41);
+//		textField_3.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				textField_3 = new JTextField(tables[numOfTable].getTotalBill()*.072 + "");
+//			}
+//		});
 		cashOutPanel.add(textField_3);
 		
 		textField_4 = new JTextField();
@@ -2056,7 +2077,10 @@ public class gui {
 		drinksPanel.add(btnNewButton_13_1);
 		btnNewButton_13_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				textArea.append(tempDrink.toString());
+				if (tempDrink.getSize().equalsIgnoreCase("")) {
+					textArea.append("Please select a size\n");
+				}
+				textArea.append(tempDrink.toString());
 //				drink.add(new Drinks(tempDrink.getNameOfDrink(),tempDrink.getSize()));
 //				tables[numOfTable].addFood(drink.get(numOfDrink));
 //				tempDrink.defaultDrink();

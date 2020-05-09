@@ -5,13 +5,21 @@ public class Drinks extends Food{
 		super();
 		this.nameOfDrink = nameOfDrink;
 		this.size = size;
+		switch (size) {
+		case "small": price = 1.00;
+		break;
+		case "regular": price = 1.5;
+		break;
+		case "large": price = 2.00;
+		break;
+		}
 	}
 	
-	public String getNameOfDrink() {
+	public String getName() {
 		return nameOfDrink;
 	}
 
-	public void setNameOfDrink(String nameOfDrink) {
+	public void setName(String nameOfDrink) {
 		this.nameOfDrink = nameOfDrink;
 	}
 
@@ -22,11 +30,11 @@ public class Drinks extends Food{
 	public void setSize(String size) {
 		this.size = size;
 		switch (size) {
-		case "small": price = 1;
+		case "small": price = 1.00;
 		break;
 		case "regular": price = 1.5;
 		break;
-		case "large": price = 2;
+		case "large": price = 2.00;
 		break;
 		}
 	}
