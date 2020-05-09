@@ -103,4 +103,9 @@ public class Salad extends Food{
 		this.crouton = false;
 		this.dressing = "";
 	}
+	
+	public double getPrice () {
+		price = 6;
+		return price;
+	}
 }

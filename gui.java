@@ -196,6 +196,12 @@ public class gui {
 		textArea.setColumns(30);
 		scrollPane.setViewportView(textArea);
 		
+		txtTest = new JTextArea();
+		txtTest.setEditable(false);
+		txtTest.setColumns(10);
+		txtTest.setBounds(119, 599, 139, 41);
+		tabScreen.add(txtTest);
+		
 		JButton btnCashOut = new JButton("Tab");
 		btnCashOut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -208,6 +214,7 @@ public class gui {
 			tempDrink.defaultDrink();
 			tempSalad.defaultSalad(); 
 			tempSides.defaultSides(); 
+			txtTest.setText(tables[numOfTable].getTotalBill()+"");
 			textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -260,6 +267,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -310,6 +318,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -360,6 +369,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -409,7 +419,8 @@ public class gui {
 				tempDessert.defaultDessert();
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
-				tempSides.defaultSides(); 
+				tempSides.defaultSides();
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -460,6 +471,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -1109,8 +1121,7 @@ public class gui {
 				} else {
 				burger.add(new Burgers(tempBurger.getNumOfPatties(),tempBurger.getTypeOfCheese(),tempBurger.getBunType(),tempBurger.getTomato(),tempBurger.getLettuce(),tempBurger.getOnion(),tempBurger.getPickle(),tempBurger.getMayo(),tempBurger.getKetchup(),tempBurger.getGrilledOnion(),tempBurger.getMustard()));
 				tables[numOfTable].addFood(burger.get(numOfBurgers));
-				textArea.setText("Current Tab " + tables[numOfTable].toString());
-				textArea.append(tempBurger.toString() + "Added to Tab\n");
+				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				tempBurger.defaultBurger();
 				numOfBurgers ++;
@@ -1327,7 +1338,8 @@ public class gui {
 				} else {
 				chickenTender.add(new ChickenTenders(tempChickenTenders.getSauce(), tempChickenTenders.getNumOfTenders()));
 				tables[numOfTable].addFood(chickenTender.get(numOfChickenTender));
-				textArea.append(tempChickenTenders.toString()); 
+				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				tempChickenTenders.defaultTenders();
 				numOfChickenTender ++;
 				}
@@ -1582,7 +1594,8 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				sides.add(new Sides(tempSides.getName()));
 				tables[numOfTable].addFood(sides.get(numOfSides));
-				textArea.append(tempSides.toString());
+				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				tempSides.defaultSides();
 				numOfSides ++;
 			}
@@ -1601,9 +1614,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(tempSalad.getCarrot() == true) {
 					tempSalad.setCarrot(false);
+					textArea.append("Carrots Removed\n");
 					}
 					else {
 						tempSalad.setCarrot(true);
+						textArea.append("Carrots Added\n");
 					}
 			}
 		});
@@ -1615,9 +1630,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(tempSalad.getTomato() == true) {
 					tempSalad.setTomato(false);
+					textArea.append("Tomatoes Removed\n");
 					}
 					else {
 						tempSalad.setTomato(true);
+						textArea.append("Tomatoes Added\n");
 					}
 			}
 		});
@@ -1629,9 +1646,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(tempSalad.getCucumber() == true) {
 					tempSalad.setCucumber(false);
+					textArea.append("Cucumber Removed\n");
 					}
 					else {
 						tempSalad.setCucumber(true);
+						textArea.append("Cucumber Added\n");
 					}
 			}
 		});
@@ -1643,9 +1662,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(tempSalad.getOnion() == true) {
 					tempSalad.setOnion(false);
+					textArea.append("Onion Removed\n");
 					}
 					else {
 						tempSalad.setOnion(true);
+						textArea.append("Onion Added\n");
 					}
 			}
 		});
@@ -1657,9 +1678,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(tempSalad.getCheese() == true) {
 					tempSalad.setCarrot(false);
+					textArea.append("Shredded Cheese Removed\n");
 					}
 					else {
 						tempSalad.setCarrot(true);
+						textArea.append("Shredded Cheese Added\n");
 					}
 			}
 		});
@@ -1671,9 +1694,11 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(tempSalad.getCrouton() == true) {
 					tempSalad.setCarrot(false);
+					textArea.append("Croutons Removed\n");
 					}
 					else {
 						tempSalad.setCarrot(true);
+						textArea.append("Croutons Added\n");
 					}
 			}
 		});
@@ -1689,11 +1714,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_2 = new JButton("Ranch");
 		btnNewButton_12_4_1_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("ranch")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("ranch"))) {
 					tempSalad.setDressing("ranch");
+					textArea.append("Ranch Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Ranch Removed\n");
 					}
 			}
 		});
@@ -1703,11 +1730,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_2 = new JButton("Sweet and Sour");
 		btnNewButton_12_4_1_1_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("sweetAndSour")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("sweetAndSour"))) {
 					tempSalad.setDressing("sweetAndSour");
+					textArea.append("Sweet and Sour Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Sweet and Sour Removed\n");
 					}
 			}
 		});
@@ -1717,11 +1746,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_4 = new JButton("BBQ");
 		btnNewButton_12_4_1_1_1_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("Bbq")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("Bbq"))) {
 					tempSalad.setDressing("Bbq");
+					textArea.append("BBQ Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("BBQ Removed\n");
 					}
 			}
 		});
@@ -1731,11 +1762,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_1_1 = new JButton("Honey Mustard");
 		btnNewButton_12_4_1_1_1_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("HoneyMustard")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("HoneyMustard"))) {
 					tempSalad.setDressing("HoneyMustard");
+					textArea.append("Honey Mustard Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Honey Mustard Removed\n");
 					}
 			}
 		});
@@ -1745,11 +1778,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_1 = new JButton("Chipotle BBQ");
 		btnNewButton_12_4_1_1_1_1_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("chipotleBbq")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("chipotleBbq"))) {
 					tempSalad.setDressing("chipotleBbq");
+					textArea.append("Chipotle BBQ Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Chipotle BBQ Removed\n");
 					}
 			}
 		});
@@ -1759,11 +1794,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_3_1 = new JButton("Buffalo");
 		btnNewButton_12_4_1_1_1_1_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("Buffalo")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("Buffalo"))) {
 					tempSalad.setDressing("Buffalo");
+					textArea.append("Buffalo Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Buffalo Removed\n");
 					}
 			}
 		});
@@ -1773,11 +1810,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_2_1 = new JButton("Ketchup");
 		btnNewButton_12_4_1_1_1_1_2_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("Ketchup")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("Ketchup"))) {
 					tempSalad.setDressing("Ketchup");
+					textArea.append("Ketchup Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Ketchup Removed\n");
 					}
 			}
 		});
@@ -1787,11 +1826,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_3_1 = new JButton("Mustard");
 		btnNewButton_12_4_1_1_1_1_2_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("mustard")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("mustard"))) {
 					tempSalad.setDressing("mustard");
+					textArea.append("Mustard Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Mustard Removed\n");
 					}
 			}
 		});
@@ -1801,11 +1842,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_1_1 = new JButton("1000 island");
 		btnNewButton_12_4_1_1_1_1_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("1000Island")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("1000Island"))) {
 					tempSalad.setDressing("1000Island");
+					textArea.append("1000 Island Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("1000 Island Removed\n");
 					}
 			}
 		});
@@ -1815,11 +1858,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_1_2 = new JButton("Blue Cheese");
 		btnNewButton_12_4_1_1_1_1_2_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("blueCheese")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("blueCheese"))) {
 					tempSalad.setDressing("blueCheese");
+					textArea.append("Blue Cheese Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Blue Cheese Removed\n");
 					}
 			}
 		});
@@ -1829,11 +1874,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_1_3 = new JButton("French");
 		btnNewButton_12_4_1_1_1_1_2_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("french")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("french"))) {
 					tempSalad.setDressing("french");
+					textArea.append("French Dressing Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("French Dressing Removed\n");
 					}
 			}
 		});
@@ -1843,11 +1890,13 @@ public class gui {
 		JButton btnNewButton_12_4_1_1_1_1_2_1_4 = new JButton("Italian");
 		btnNewButton_12_4_1_1_1_1_2_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(tempSalad.getDressing().equalsIgnoreCase("italian")) {
+				if(!(tempSalad.getDressing().equalsIgnoreCase("italian"))) {
 					tempSalad.setDressing("italian");
+					textArea.append("Italian Dressing Added\n");
 					}
 					else {
 						tempSalad.setDressing("");
+						textArea.append("Italian Dressing Removed\n");
 					}
 			}
 		});
@@ -1869,6 +1918,8 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				salad.add(new Salad(tempSalad.getTomato(),tempSalad.getCarrot(),tempSalad.getCucumber(),tempSalad.getOnion(),tempSalad.getCheese(),tempSalad.getCrouton(),tempSalad.getDressing()));
 				tables[numOfTable].addFood(salad.get(numOfSalads));
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				textArea.setText(tables[numOfTable].toString());
 				numOfSalads ++;
 			}
 		});
@@ -1903,7 +1954,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("regular"))) {
 					tempDrink.setSize("regular");
-					textArea.append("Regular Selected " + tempDrink.getPrice() + "\n");
+					textArea.append("Regular Selected ");
 					}
 					else {
 						tempDrink.setSize("");
@@ -2080,12 +2131,10 @@ public class gui {
 				if (tempDrink.getSize().equalsIgnoreCase("")) {
 					textArea.append("Please select a size\n");
 				}
-				textArea.append(tempDrink.toString());
-//				drink.add(new Drinks(tempDrink.getNameOfDrink(),tempDrink.getSize()));
-//				tables[numOfTable].addFood(drink.get(numOfDrink));
-//				tempDrink.defaultDrink();
 				drink.add(new Drinks(tempDrink.getName(),tempDrink.getSize()));
 				tables[numOfTable].addFood(drink.get(numOfDrink));
+				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				numOfDrink ++;
 			}
 		});
@@ -2214,9 +2263,10 @@ public class gui {
 		dessertPanel.add(btnNewButton_13);
 		btnNewButton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append(tempDessert.toString());
 				dessert.add(new Dessert(tempDessert.getName()));
 				tables[numOfTable].addFood(dessert.get(numOfDessert));
+				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				numOfDessert++;
 			}
 		});
@@ -2231,12 +2281,6 @@ public class gui {
 		lblNewLabel_10_2_1_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_10_2_1_2.setBounds(15, 589, 98, 52);
 		tabScreen.add(lblNewLabel_10_2_1_2);
-		
-		txtTest = new JTextArea();
-		txtTest.setEditable(false);
-		txtTest.setColumns(10);
-		txtTest.setBounds(119, 599, 139, 41);
-		tabScreen.add(txtTest);
 		
 		JButton btnNewButton_7 = new JButton("Home");
 		btnNewButton_7.addActionListener(new ActionListener() {

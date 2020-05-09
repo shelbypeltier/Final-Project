@@ -9,16 +9,24 @@ public class Sides extends Food{
 		super (name);
 	}
 	
-	@Override
 	public double getPrice() {
-		// TODO Auto-generated method stub
-		return super.getPrice();
-	}
-
-	@Override
-	public void setPrice(double price) {
-		// TODO Auto-generated method stub
-		super.setPrice(price);
+		switch (name) {
+		case "regFry":
+		case "regOnionRings":
+		case "regCheeseCurd":
+		case "regColeSlaw":
+		case "regMozzarellaSticks":
+		case "regWaffleFry": price = 3;
+		break;
+		case "largeFry":
+		case "largeOnionRing":
+		case "largeCheeseCurd":
+		case "largeColeSlaw":
+		case "largeMozzarellaSticks":
+		case "largeWaffleFry": price = 5;
+		break;
+		}
+		return price;
 	}
 
 	@Override
