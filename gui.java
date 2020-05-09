@@ -1084,7 +1084,7 @@ public class gui {
 				tables[numOfTable].addFood(burger.get(numOfBurgers));
 				textArea.setText("Current Tab " + tables[numOfTable].toString());
 				textArea.append(tempBurger.toString() + "Added to Tab\n");
-				txtTest.append(tempBurger.getPrice() + "");
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				tempBurger.defaultBurger();
 				numOfBurgers ++;
 				}

@@ -29,6 +29,14 @@ public class Table {
 		super();
 		this.tableNum = tableNum;
 	}
+	
+	public double getTotalBill () {
+		double subtotal = 0;
+		for (int i = 0; i<food.size(); i++) {
+			subtotal += food.get(i).getPrice();
+		}
+		return subtotal;
+	}
 	@Override
 	public String toString() {
 		String tab = "";
