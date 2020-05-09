@@ -40,7 +40,7 @@ public class gui {
 	private JLayeredPane layeredPane;
 	private JLayeredPane layeredPane1 = new JLayeredPane();
 	private JPanel Main;
-	private JTextField textField;
+	private JTextArea textField;
 	private JTextField txtEnterInCash;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -224,7 +224,7 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
-
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 			}
 		});
 		panel_3.add(btnNewButton_1);
@@ -271,6 +271,7 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				panelSwitcher1(cashOutPanel);
 				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 			}
 		});
 		panel_3_1.add(btnNewButton_1_1);
@@ -317,6 +318,7 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 			}
 		});
 		panel_3_2.add(btnNewButton_1_2);
@@ -363,6 +365,7 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 			}
 		});
 		panel_3_3.add(btnNewButton_1_3);
@@ -409,6 +412,7 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 			}
 		});
 		panel_3_4.add(btnNewButton_1_4);
@@ -455,6 +459,7 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 			}
 		});
 		panel_3_5.add(btnNewButton_1_5);
@@ -562,7 +567,7 @@ public class gui {
 		lblNewLabel_10.setBounds(134, 62, 343, 52);
 		cashOutPanel.add(lblNewLabel_10);
 		
-		textField = new JTextField();
+		textField = new JTextArea();
 		textField.setEditable(false);
 		textField.setBounds(506, 62, 139, 41);
 		cashOutPanel.add(textField);
