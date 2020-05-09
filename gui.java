@@ -1592,12 +1592,16 @@ public class gui {
 		sidesPanel.add(btnNewButton_13_3);
 		btnNewButton_13_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (tempSides.getName().equals("")) {
+					textArea.append("Please Select A Side\n");
+				} else {
 				sides.add(new Sides(tempSides.getName()));
 				tables[numOfTable].addFood(sides.get(numOfSides));
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				tempSides.defaultSides();
 				numOfSides ++;
+				}
 			}
 		});
 		saladPanel.setLayout(null);
@@ -1918,6 +1922,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				salad.add(new Salad(tempSalad.getTomato(),tempSalad.getCarrot(),tempSalad.getCucumber(),tempSalad.getOnion(),tempSalad.getCheese(),tempSalad.getCrouton(),tempSalad.getDressing()));
 				tables[numOfTable].addFood(salad.get(numOfSalads));
+				tempSalad.defaultSalad();
 				txtTest.setText(tables[numOfTable].getTotalBill() + "");
 				textArea.setText(tables[numOfTable].toString());
 				numOfSalads ++;
@@ -1954,7 +1959,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("regular"))) {
 					tempDrink.setSize("regular");
-					textArea.append("Regular Selected ");
+					textArea.append("Regular Selected\n");
 					}
 					else {
 						tempDrink.setSize("");
@@ -2128,14 +2133,18 @@ public class gui {
 		drinksPanel.add(btnNewButton_13_1);
 		btnNewButton_13_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (tempDrink.getSize().equalsIgnoreCase("")) {
-					textArea.append("Please select a size\n");
+				if (tempDrink.getSize().equals("")) {
+					textArea.append("Please Select a Size\n");
+				} else if (tempDrink.getName().equals("")) {
+					textArea.append("Please Select a Drink\n");
+				} else {
+					drink.add(new Drinks(tempDrink.getName(),tempDrink.getSize()));
+					tables[numOfTable].addFood(drink.get(numOfDrink));
+					tempDrink.defaultDrink();
+					textArea.setText(tables[numOfTable].toString());
+					txtTest.setText(tables[numOfTable].getTotalBill() + "");
+					numOfDrink ++;
 				}
-				drink.add(new Drinks(tempDrink.getName(),tempDrink.getSize()));
-				tables[numOfTable].addFood(drink.get(numOfDrink));
-				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				numOfDrink ++;
 			}
 		});
 		
@@ -2263,11 +2272,16 @@ public class gui {
 		dessertPanel.add(btnNewButton_13);
 		btnNewButton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (tempDessert.getName().equals("")) {
+					textArea.append("Please Select A Dessert\n");
+				} else {
 				dessert.add(new Dessert(tempDessert.getName()));
 				tables[numOfTable].addFood(dessert.get(numOfDessert));
+				tempDessert.defaultDessert();
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				numOfDessert++;
+				}
 			}
 		});
 		
