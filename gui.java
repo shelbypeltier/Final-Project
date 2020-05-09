@@ -46,7 +46,7 @@ public class gui {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_1;
-	private JTextField txtTest;
+	private JTextArea txtTest;
 	private ChickenTenders tempChickenTenders = new ChickenTenders();
 	private Dessert tempDessert = new Dessert ();
 	private Drinks tempDrink = new Drinks();
@@ -656,8 +656,8 @@ public class gui {
 		JButton btnNewButton_11 = new JButton("Tomatos");
 		btnNewButton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			if(!(tempBurger.getTomato().equals("yes"))) {
-				tempBurger.setTomato("yes");
+			if(!(tempBurger.getTomato().equals("tomato"))) {
+				tempBurger.setTomato("tomato");
 				textArea.append("Tomatoes added\n");
 				}
 				else {
@@ -881,8 +881,8 @@ public class gui {
 		JButton btnNewButton_11_2_6 = new JButton("Grilled Onions");
 		btnNewButton_11_2_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!(tempBurger.getGrilledOnion().equalsIgnoreCase("grilled onion"))) {
-					tempBurger.setGrilledOnion("grilled onion");
+				if(!(tempBurger.getGrilledOnion().equalsIgnoreCase("grilledonion"))) {
+					tempBurger.setGrilledOnion("grilledonion");
 					textArea.append("Grilled Onions Added\n"); 
 					}
 					else {
@@ -897,8 +897,8 @@ public class gui {
 		JButton btnNewButton_11_2_7 = new JButton("Xtra Grilled Onions");
 		btnNewButton_11_2_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!(tempBurger.getGrilledOnion().equalsIgnoreCase("Extra grilled onion"))) {
-					tempBurger.setGrilledOnion("Extra Grilled Onion");
+				if(!(tempBurger.getGrilledOnion().equalsIgnoreCase("Extragrilledonion"))) {
+					tempBurger.setGrilledOnion("ExtraGrilledOnion");
 					textArea.append("Extra Grilled Onions Added\n"); 
 					}
 					else {
@@ -1075,12 +1075,19 @@ public class gui {
 		JButton btnNewButton_13_5 = new JButton("Create");
 		btnNewButton_13_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (tempBurger.getBunType().equals("")) {
+					textArea.append("Please Select a Bun Type\n");
+				} else if (tempBurger.getNumOfPatties().equals("")) {
+					textArea.append("Please Select a Pattie\n");
+				} else {
 				burger.add(new Burgers(tempBurger.getNumOfPatties(),tempBurger.getTypeOfCheese(),tempBurger.getBunType(),tempBurger.getTomato(),tempBurger.getLettuce(),tempBurger.getOnion(),tempBurger.getPickle(),tempBurger.getMayo(),tempBurger.getKetchup(),tempBurger.getGrilledOnion(),tempBurger.getMustard()));
 				tables[numOfTable].addFood(burger.get(numOfBurgers));
-				textArea.setText(tables[numOfTable].toString());
-				textArea.append(tempBurger.toString());
+				textArea.setText("Current Tab " + tables[numOfTable].toString());
+				textArea.append(tempBurger.toString() + "Added to Tab\n");
+				txtTest.append(tempBurger.getPrice() + "");
 				tempBurger.defaultBurger();
 				numOfBurgers ++;
+				}
 			}
 		});
 		btnNewButton_13_5.setBounds(517, 11, 145, 51);
@@ -1870,7 +1877,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("regular"))) {
 					tempDrink.setSize("regular");
-					textArea.append("Regular Selected\n");
+					textArea.append("Regular Selected " + tempDrink.getPrice() + "\n");
 					}
 					else {
 						tempDrink.setSize("");
@@ -2044,10 +2051,12 @@ public class gui {
 		drinksPanel.add(btnNewButton_13_1);
 		btnNewButton_13_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append(tempDrink.toString());
-				drink.add(new Drinks(tempDrink.getNameOfDrink(),tempDrink.getSize()));
+//				textArea.append(tempDrink.toString());
+//				drink.add(new Drinks(tempDrink.getNameOfDrink(),tempDrink.getSize()));
+//				tables[numOfTable].addFood(drink.get(numOfDrink));
+//				tempDrink.defaultDrink();
+				drink.add(new Drinks(tempDrink.getName(),tempDrink.getSize()));
 				tables[numOfTable].addFood(drink.get(numOfDrink));
-				tempDrink.defaultDrink();
 				numOfDrink ++;
 			}
 		});
@@ -2178,6 +2187,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				dessert.add(new Dessert(tempDessert.getName()));
 				tables[numOfTable].addFood(dessert.get(numOfDessert));
+				numOfDessert++;
 			}
 		});
 		
@@ -2192,7 +2202,7 @@ public class gui {
 		lblNewLabel_10_2_1_2.setBounds(15, 589, 98, 52);
 		tabScreen.add(lblNewLabel_10_2_1_2);
 		
-		txtTest = new JTextField();
+		txtTest = new JTextArea();
 		txtTest.setEditable(false);
 		txtTest.setColumns(10);
 		txtTest.setBounds(119, 599, 139, 41);

@@ -45,6 +45,12 @@ public class Burgers extends Food{
 		return numOfPatties;
 	}
 	public void setNumOfPatties(String numOfPatties) {
+		switch (numOfPatties) {
+		case "quarterPound" : price = 9.99;
+		break;
+		case "halfPound" : price = 11.99;
+		break;
+		}
 		this.numOfPatties = numOfPatties;
 	}
 	public String getTypeOfCheese() {
@@ -108,9 +114,37 @@ public class Burgers extends Food{
 		this.mustard = mustard;
 	}
 	public double getPrice() {
-		if (tomato.equals ("Extra Tomato"))
+		if (tomato.equalsIgnoreCase ("ExtraTomato"))
 		{
-			price = price + .20;
+			price += .20;
+		}
+		if (lettuce.equalsIgnoreCase ("ExtraLettuce"))
+		{
+			price += .20;
+		}
+		if (onion.equalsIgnoreCase ("ExtraOnion"))
+		{
+			price += .20;
+		}
+		if (pickle.equalsIgnoreCase ("ExtraPickles"))
+		{
+			price += .20;
+		}
+		if (mayo.equalsIgnoreCase ("ExtraMayo"))
+		{
+			price += .20;
+		}
+		if (ketchup.equalsIgnoreCase ("ExtraKetchup"))
+		{
+			price += .20;
+		}
+		if (grilledOnion.equalsIgnoreCase ("ExtraGrilledOnion"))
+		{
+			price += .20;
+		}
+		if (mustard.equalsIgnoreCase ("ExtraMustard"))
+		{
+			price += .20;
 		}
 		return price;
 	}
@@ -153,6 +187,9 @@ public class Burgers extends Food{
 		}
 		if(!(onion.isEmpty())) {
 			tab += "\t" + onion + "\n";
+		}
+		if(!(grilledOnion.isEmpty())) {
+			tab += "\t" + grilledOnion + "\n";
 		}
 		if(!(lettuce.isEmpty())) {
 			tab += "\t" + lettuce + "\n";

@@ -21,12 +21,20 @@ public class Drinks extends Food{
 
 	public void setSize(String size) {
 		this.size = size;
+		switch (size) {
+		case "small": price = 1;
+		break;
+		case "regular": price = 1.5;
+		break;
+		case "large": price = 2;
+		break;
+		}
 	}
 	
 	public Drinks() {
 		super();
-		nameOfDrink = "pepsi";
-		size = "small";
+//		nameOfDrink = "pepsi";
+//		size = "small";
 	}
 
 	@Override
