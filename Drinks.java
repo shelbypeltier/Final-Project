@@ -41,8 +41,8 @@ public class Drinks extends Food{
 	
 	public Drinks() {
 		super();
-		nameOfDrink = "";
-		size = "";
+//		nameOfDrink = "pepsi";
+//		size = "small";
 	}
 
 	@Override
