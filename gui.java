@@ -46,7 +46,7 @@ public class gui {
 	private JTextArea textField_2;
 	private JTextField textField_3;
 	private JTextArea textField_4;
-	private JTextField textField_1;
+	private JTextArea textField_1;
 	private JTextArea txtTest;
 	private ChickenTenders tempChickenTenders = new ChickenTenders();
 	private Dessert tempDessert = new Dessert ();
@@ -70,6 +70,7 @@ public class gui {
 	private int numOfSides = 0;
 	private int numOfSalads = 0;
 	private double tip = 0;
+	private double cash = 0;
 	private double total;
 	
 	public void panelSwitcher(JPanel panel) {
@@ -628,6 +629,11 @@ public class gui {
 		cashOutPanel.add(lblNewLabel_10_2_1);
 		
 		JButton btnNewButton_8 = new JButton("Credit");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField_1.setText(formatter.format(0));
+			}
+		});
 		btnNewButton_8.setBounds(232, 284, 123, 52);
 		cashOutPanel.add(btnNewButton_8);
 		
@@ -673,10 +679,16 @@ public class gui {
 		cashOutPanel.add(textField_4);
 		
 		JButton btnNewButton_9 = new JButton("Cash Out");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			cash = Double.parseDouble(txtEnterInCash.getText());
+			textField_1.setText(formatter.format(cash-total));
+			}
+		});
 		btnNewButton_9.setBounds(506, 346, 139, 41);
 		cashOutPanel.add(btnNewButton_9);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JTextArea();
 		textField_1.setEditable(false);
 		textField_1.setColumns(10);
 		textField_1.setBounds(506, 439, 139, 41);

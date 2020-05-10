@@ -3,7 +3,6 @@ public class Burgers extends Food{
 	private String numOfPatties;
 	private String typeOfCheese,bunType;
 	private String tomato,lettuce,onion,pickle,mayo,ketchup,grilledOnion,mustard;
-	private double price = 11.99;
 
 	//i made the condiments into String so 0=none 1=easy 2=normal 3=extra let me know if this is good
 	
@@ -20,7 +19,7 @@ public class Burgers extends Food{
 		this.ketchup = "";
 		this.grilledOnion = "";
 		this.mustard = "";
-		this.price = 9.99;
+		this.price = 0.00;
 
 
 		
@@ -44,13 +43,8 @@ public class Burgers extends Food{
 	public String getNumOfPatties() {
 		return numOfPatties;
 	}
+	
 	public void setNumOfPatties(String numOfPatties) {
-		switch (numOfPatties) {
-		case "quarterPound" : price = 9.99;
-		break;
-		case "halfPound" : price = 11.99;
-		break;
-		}
 		this.numOfPatties = numOfPatties;
 	}
 	public String getTypeOfCheese() {
@@ -114,6 +108,11 @@ public class Burgers extends Food{
 		this.mustard = mustard;
 	}
 	public double getPrice() {
+		if (this.numOfPatties.equalsIgnoreCase("HalfPound")) {
+			price = 11.99;
+		} else if (this.numOfPatties.equalsIgnoreCase("QuarterPound")) {
+			price = 9.99;
+		}
 		if (tomato.equalsIgnoreCase ("ExtraTomato"))
 		{
 			price += .20;
