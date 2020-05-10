@@ -24,6 +24,10 @@ public class Table {
 	public void removeFood(int foodNum) {
 		food.remove(foodNum);
 	}
+	
+	public void clearTable () {
+		food.clear();
+	}
 
 	public Table(int tableNum) {
 		super();

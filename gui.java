@@ -710,6 +710,7 @@ public class gui {
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textField_1.setText(formatter.format(0));
+				tables[numOfTable].clearTable();
 			}
 		});
 		btnNewButton_8.setBounds(232, 284, 123, 52);
@@ -761,6 +762,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 			cash = Double.parseDouble(txtEnterInCash.getText());
 			textField_1.setText(formatter.format(cash-total));
+			tables[numOfTable].clearTable();
 			}
 		});
 		btnNewButton_9.setBounds(506, 346, 139, 41);
