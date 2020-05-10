@@ -72,6 +72,8 @@ public class gui {
 	private double tip = 0;
 	private double cash = 0;
 	private double total;
+	private int removeFood =0;
+	private JTextField textField_5;
 	
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
@@ -231,6 +233,10 @@ public class gui {
 		JPanel panel_3 = new JPanel();
 		panel_1.add(panel_3);
 		
+		JPanel removePanel = new JPanel();
+		layeredPane1.add(removePanel, "name_532040383290800");
+		removePanel.setLayout(null);
+		
 		JButton btnNewButton_1 = new JButton("Cash Out");
 		btnNewButton_1.addActionListener(new ActionListener() {
 
@@ -245,6 +251,18 @@ public class gui {
 			}
 		});
 		panel_3.add(btnNewButton_1);
+		
+		JButton btnRemoveItems = new JButton("Remove Items");
+		btnRemoveItems.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				numOfTable = 0;
+				panelSwitcher1(removePanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
+			}
+		});
+		btnRemoveItems.setBackground(Color.WHITE);
+		panel_1.add(btnRemoveItems);
 		
 		JPanel panel_1_1 = new JPanel();
 		panel.add(panel_1_1);
@@ -280,10 +298,8 @@ public class gui {
 		btnNewButton_2.setBackground(Color.WHITE);
 		panel_2_1.add(btnNewButton_2);
 		
-		JPanel panel_3_1 = new JPanel();
-		panel_1_1.add(panel_3_1);
-		
 		JButton btnNewButton_1_1 = new JButton("Cash Out");
+		panel_1_1.add(btnNewButton_1_1);
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				numOfTable = 1;
@@ -295,7 +311,21 @@ public class gui {
 				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072));
 			}
 		});
-		panel_3_1.add(btnNewButton_1_1);
+		
+		JButton btnRemoveItems_1 = new JButton("Remove Items");
+		btnRemoveItems_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numOfTable = 1;
+				panelSwitcher1(removePanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
+			}
+		});
+		panel_1_1.add(btnRemoveItems_1);
+		btnRemoveItems_1.setBackground(Color.WHITE);
+		
+		JPanel panel_3_1 = new JPanel();
+		panel_1_1.add(panel_3_1);
 		
 		JPanel panel_1_2 = new JPanel();
 		panel.add(panel_1_2);
@@ -348,6 +378,18 @@ public class gui {
 		});
 		panel_3_2.add(btnNewButton_1_2);
 		
+		JButton btnRemoveItems_2 = new JButton("Remove Items");
+		btnRemoveItems_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numOfTable = 2;
+				panelSwitcher1(removePanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
+			}
+		});
+		btnRemoveItems_2.setBackground(Color.WHITE);
+		panel_1_2.add(btnRemoveItems_2);
+		
 		JPanel panel_1_3 = new JPanel();
 		panel.add(panel_1_3);
 		panel_1_3.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 20));
@@ -398,6 +440,18 @@ public class gui {
 			}
 		});
 		panel_3_3.add(btnNewButton_1_3);
+		
+		JButton btnRemoveItems_3 = new JButton("Remove Items");
+		btnRemoveItems_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numOfTable = 3;
+				panelSwitcher1(removePanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
+			}
+		});
+		btnRemoveItems_3.setBackground(Color.WHITE);
+		panel_1_3.add(btnRemoveItems_3);
 		
 		JPanel panel_1_4 = new JPanel();
 		panel.add(panel_1_4);
@@ -450,6 +504,18 @@ public class gui {
 		});
 		panel_3_4.add(btnNewButton_1_4);
 		
+		JButton btnRemoveItems_4 = new JButton("Remove Items");
+		btnRemoveItems_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numOfTable = 4;
+				panelSwitcher1(removePanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
+			}
+		});
+		btnRemoveItems_4.setBackground(Color.WHITE);
+		panel_1_4.add(btnRemoveItems_4);
+		
 		JPanel panel_1_5 = new JPanel();
 		panel.add(panel_1_5);
 		panel_1_5.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 20));
@@ -500,6 +566,18 @@ public class gui {
 			}
 		});
 		panel_3_5.add(btnNewButton_1_5);
+		
+		JButton btnRemoveItems_5 = new JButton("Remove Items");
+		btnRemoveItems_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numOfTable = 5;
+				panelSwitcher1(removePanel);
+				panelSwitcher(addFoodPanel);
+				textArea.setText(tables[numOfTable].toString());
+			}
+		});
+		btnRemoveItems_5.setBackground(Color.WHITE);
+		panel_1_5.add(btnRemoveItems_5);
 		
 		layeredPane.add(addFoodPanel, "name_279492568056700");
 		addFoodPanel.setLayout(null);
@@ -2298,6 +2376,27 @@ public class gui {
 		JButton btnNewButton_13 = new JButton("Add to table");
 		btnNewButton_13.setBounds(524, 9, 166, 69);
 		dessertPanel.add(btnNewButton_13);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(34, 226, 216, 53);
+		removePanel.add(textField_5);
+		textField_5.setColumns(10);
+		
+		JLabel lblNewLabel_13 = new JLabel("Enter Number Of Item ");
+		lblNewLabel_13.setBounds(34, 155, 216, 32);
+		removePanel.add(lblNewLabel_13);
+		
+		JButton btnNewButton_15 = new JButton("Remove Item");
+		btnNewButton_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Integer.parseInt(textField_5.getText());
+				tables[numOfTable].removeFood(removeFood);
+				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+			}
+		});
+		btnNewButton_15.setBounds(322, 226, 136, 53);
+		removePanel.add(btnNewButton_15);
 		btnNewButton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (tempDessert.getName().equals("")) {
