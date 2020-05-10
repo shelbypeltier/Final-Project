@@ -9,12 +9,19 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.NumberFormatter;
+
 import java.awt.FlowLayout;
 import javax.swing.SwingConstants;
 import javax.swing.JLayeredPane;
@@ -27,11 +34,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.TextArea;
 import javax.swing.BoxLayout;
 import javax.swing.JTextField;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JRadioButton;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import javax.swing.UIManager;
 
 
 public class gui {
@@ -74,6 +76,7 @@ public class gui {
 	private double total;
 	private int removeFood =0;
 	private JTextField textField_5;
+	private int bootlegFormatting = 0;
 	
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
@@ -104,20 +107,19 @@ public class gui {
 		});
 	}
   
-	public gui() {
+	public gui() throws ParseException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() throws ParseException {
 		for(int i=0;i < numOfTables ;i++) {
 		tables[i] = new Table(i+1);
 		}
 		
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
-		
 
 		frmRegister = new JFrame();
 		frmRegister.setResizable(false);
@@ -741,14 +743,21 @@ public class gui {
 
 		cashOutPanel.add(textField_2);
 		
-		textField_3 = new JTextField();
+		JTextField textField_3 = new JTextField();
+		textField_3.addKeyListener(new KeyAdapter() {
+			   public void keyTyped(KeyEvent e) {
+			      char c = e.getKeyChar();
+			      if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+			    	  if ((c == '.')&&(bootlegFormatting== 0)) {
+			    		  bootlegFormatting ++;
+			    	  } else {
+			         e.consume();  // ignore event
+			    	  }
+			      }
+			   }
+			});
 		textField_3.setColumns(10);
 		textField_3.setBounds(506, 166, 139, 41);
-//		textField_3.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				textField_3 = new JTextField(tables[numOfTable].getTotalBill()*.072 + "");
-//			}
-//		});
 		cashOutPanel.add(textField_3);
 		
 		textField_4 = new JTextArea();
@@ -786,6 +795,7 @@ public class gui {
 				tip = Double.parseDouble(textField_3.getText());
 				total = tip + tables[numOfTable].getTotalBill()*.072 + tables[numOfTable].getTotalBill();
 				textField_4.setText(formatter.format(total));
+				bootlegFormatting=0;
 			}
 		});
 		btnNewButton_14.setBounds(211, 178, 158, 52);
@@ -2379,10 +2389,18 @@ public class gui {
 		btnNewButton_13.setBounds(524, 9, 166, 69);
 		dessertPanel.add(btnNewButton_13);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(34, 226, 216, 53);
-		removePanel.add(textField_5);
-		textField_5.setColumns(10);
+			JTextField removeField = new JTextField();
+			removeField.addKeyListener(new KeyAdapter() {
+				   public void keyTyped(KeyEvent e) {
+				      char c = e.getKeyChar();
+				      if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+				         e.consume();  // ignore event
+				      }
+				   }
+				});
+			removeField.setBounds(34, 226, 216, 53);
+			removePanel.add(removeField);
+			removeField.setColumns(10);
 		
 		JLabel lblNewLabel_13 = new JLabel("Enter Number Of Item ");
 		lblNewLabel_13.setBounds(34, 155, 216, 32);
@@ -2391,10 +2409,16 @@ public class gui {
 		JButton btnNewButton_15 = new JButton("Remove Item");
 		btnNewButton_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Integer.parseInt(textField_5.getText());
+				removeFood = Integer.parseInt(removeField.getText());
+				if ((removeFood<=0)||(removeFood>tables[numOfTable].getLength())) {
+					textArea.append("Input a valid Number\n");
+				} else if (tables[numOfTable].getLength() == 1) {
+					textArea.append("Order Must Have At Least One Item\n");
+				} else {
 				tables[numOfTable].removeFood(removeFood);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				}
 			}
 		});
 		btnNewButton_15.setBounds(322, 226, 136, 53);

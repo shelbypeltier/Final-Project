@@ -28,6 +28,10 @@ public class Table {
 	public void clearTable () {
 		food.clear();
 	}
+	public int getLength () {
+		int length = food.size();
+		return length;
+	}
 
 	public Table(int tableNum) {
 		super();
