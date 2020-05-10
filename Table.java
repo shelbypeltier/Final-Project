@@ -21,14 +21,12 @@ public class Table {
 	public void addFood(Food food) {
 		this.food.add(food);
 	}
-	public void removeFood(int foodNum) {
-		food.remove(foodNum);
+	public void removeFood(Food food) {
+		this.food.remove(food);
 	}
-	
-	public void clearTable () {
-		food.clear();
+	public void clearFood() {
+		this.food.clear();
 	}
-
 	public Table(int tableNum) {
 		super();
 		this.tableNum = tableNum;
