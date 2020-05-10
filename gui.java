@@ -743,8 +743,8 @@ public class gui {
 
 		cashOutPanel.add(textField_2);
 		
-		JTextField textField_3 = new JTextField();
-		textField_3.addKeyListener(new KeyAdapter() {
+		JTextField tipField = new JTextField();
+		tipField.addKeyListener(new KeyAdapter() {
 			   public void keyTyped(KeyEvent e) {
 			      char c = e.getKeyChar();
 			      if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
@@ -756,9 +756,9 @@ public class gui {
 			      }
 			   }
 			});
-		textField_3.setColumns(10);
-		textField_3.setBounds(506, 166, 139, 41);
-		cashOutPanel.add(textField_3);
+		tipField.setColumns(10);
+		tipField.setBounds(506, 166, 139, 41);
+		cashOutPanel.add(tipField);
 		
 		textField_4 = new JTextArea();
 		textField_4.setEditable(false);
@@ -789,17 +789,26 @@ public class gui {
 		lblNewLabel_10_2_1_1.setBounds(134, 439, 343, 52);
 		cashOutPanel.add(lblNewLabel_10_2_1_1);
 		
-		JButton btnNewButton_14 = new JButton("Add Tip");
-		btnNewButton_14.addActionListener(new ActionListener() {
+		JButton addTip = new JButton("Add Tip");
+		addTip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tip = Double.parseDouble(textField_3.getText());
+				tip = Double.parseDouble(tipField.getText());
 				total = tip + tables[numOfTable].getTotalBill()*.072 + tables[numOfTable].getTotalBill();
 				textField_4.setText(formatter.format(total));
 				bootlegFormatting=0;
 			}
 		});
-		btnNewButton_14.setBounds(211, 178, 158, 52);
-		cashOutPanel.add(btnNewButton_14);
+		addTip.setBounds(211, 178, 158, 52);
+		cashOutPanel.add(addTip);
+		
+		JButton ClearTip = new JButton("Clear Tip");
+		ClearTip.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				tipField.setText("");
+			}
+		});
+		ClearTip.setBounds(35, 178, 158, 52);
+		cashOutPanel.add(ClearTip);
 		
 		layeredPane1.add(burgerScreen, "name_357597043214500");
 		burgerScreen.setLayout(null);
