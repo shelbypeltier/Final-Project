@@ -69,6 +69,7 @@ public class gui {
 	private int numOfBurgers = 0;
 	private int numOfSides = 0;
 	private int numOfSalads = 0;
+	private String tip ;
 	
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
@@ -239,6 +240,7 @@ public class gui {
 				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
 				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
+			
 			}
 		});
 		panel_3.add(btnNewButton_1);
@@ -616,7 +618,7 @@ public class gui {
 		JLabel lblNewLabel_10_2 = new JLabel("Tip: ");
 		lblNewLabel_10_2.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel_10_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_10_2.setBounds(134, 156, 343, 52);
+		lblNewLabel_10_2.setBounds(410, 156, 67, 52);
 		cashOutPanel.add(lblNewLabel_10_2);
 		
 		JLabel lblNewLabel_10_2_1 = new JLabel("Total: ");
@@ -626,6 +628,12 @@ public class gui {
 		cashOutPanel.add(lblNewLabel_10_2_1);
 		
 		JButton btnNewButton_8 = new JButton("Credit");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField_1.setText("PAID");
+				tables[numOfTable].clearFood();
+			}
+		});
 		btnNewButton_8.setBounds(232, 284, 123, 52);
 		cashOutPanel.add(btnNewButton_8);
 		
@@ -651,7 +659,6 @@ public class gui {
 		textField_2.setEditable(false);
 		textField_2.setColumns(10);
 		textField_2.setBounds(506, 114, 139, 41);
-
 		cashOutPanel.add(textField_2);
 		
 		textField_3 = new JTextField();
@@ -665,8 +672,9 @@ public class gui {
 		textField_4.setColumns(10);
 		textField_4.setBounds(506, 221, 139, 41);
 		cashOutPanel.add(textField_4);
-		//textField_4.setText(""+formatter.format((Double.parseDouble(textField_2.getText())+Double.parseDouble(textField_3.getText()))));
+		
 		JButton btnNewButton_9 = new JButton("Cash Out");
+		
 		btnNewButton_9.setBounds(506, 346, 139, 41);
 		cashOutPanel.add(btnNewButton_9);
 		
@@ -681,6 +689,18 @@ public class gui {
 		lblNewLabel_10_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_10_2_1_1.setBounds(134, 439, 343, 52);
 		cashOutPanel.add(lblNewLabel_10_2_1_1);
+		
+		JButton btnNewButton_14 = new JButton("Add tip");
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String tip  = textField_3.getText();
+				double grandTotal;
+				grandTotal = Double.parseDouble(tip) + ((tables[numOfTable].getTotalBill()*.072)+tables[numOfTable].getTotalBill());
+				textField_4.setText(""+formatter.format(grandTotal));
+			}
+		});
+		btnNewButton_14.setBounds(306, 172, 104, 33);
+		cashOutPanel.add(btnNewButton_14);
 		
 		layeredPane1.add(burgerScreen, "name_357597043214500");
 		burgerScreen.setLayout(null);
@@ -2304,7 +2324,23 @@ public class gui {
 		});
 		btnNewButton_10.setBounds(119, 17, 125, 40);
 		addFoodPanel.add(btnNewButton_10);
-
+		
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String change = txtEnterInCash.getText();
+				double changeMoney;
+				changeMoney = Double.parseDouble(change);
+				//if ((tables[numOfTable].getTotalBill()*.072)+tables[numOfTable].getTotalBill() <= changeMoney) {
+				//	changeMoney = changeMoney - grandTotal;
+				//	textField_1.setText("" + changeMoney);
+				//}
+				//else {
+				//	textField_1.setText("not enough money");
+				//}
+				tables[numOfTable].clearFood();
+			}
+		});
+		
 		frmRegister.setBounds(100, 100, 1000, 700);
 		frmRegister.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

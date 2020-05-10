@@ -24,7 +24,9 @@ public class Table {
 	public void removeFood(Food food) {
 		this.food.remove(food);
 	}
-
+	public void clearFood() {
+		this.food.clear();
+	}
 	public Table(int tableNum) {
 		super();
 		this.tableNum = tableNum;
