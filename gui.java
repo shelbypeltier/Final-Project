@@ -45,7 +45,7 @@ public class gui {
 	private JTextField txtEnterInCash;
 	private JTextArea textField_2;
 	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextArea textField_4;
 	private JTextField textField_1;
 	private JTextArea txtTest;
 	private ChickenTenders tempChickenTenders = new ChickenTenders();
@@ -69,6 +69,8 @@ public class gui {
 	private int numOfBurgers = 0;
 	private int numOfSides = 0;
 	private int numOfSalads = 0;
+	private double tip = 0;
+	private double total;
 	
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
@@ -664,7 +666,7 @@ public class gui {
 //		});
 		cashOutPanel.add(textField_3);
 		
-		textField_4 = new JTextField();
+		textField_4 = new JTextArea();
 		textField_4.setEditable(false);
 		textField_4.setColumns(10);
 		textField_4.setBounds(506, 221, 139, 41);
@@ -687,6 +689,13 @@ public class gui {
 		cashOutPanel.add(lblNewLabel_10_2_1_1);
 		
 		JButton btnNewButton_14 = new JButton("Add Tip");
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				tip = Double.parseDouble(textField_3.getText());
+				total = tip + tables[numOfTable].getTotalBill()*.072 + tables[numOfTable].getTotalBill();
+				textField_4.setText(formatter.format(total));
+			}
+		});
 		btnNewButton_14.setBounds(211, 178, 158, 52);
 		cashOutPanel.add(btnNewButton_14);
 		
