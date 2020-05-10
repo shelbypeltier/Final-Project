@@ -77,6 +77,7 @@ public class gui {
 	private int removeFood =0;
 	private JTextField textField_5;
 	private int bootlegFormatting = 0;
+	private int bootlegFormatting2 = 0;
 	
 	public void panelSwitcher(JPanel panel) {
 		layeredPane.removeAll();
@@ -732,6 +733,18 @@ public class gui {
 		txtEnterInCash = new JTextField();
 		txtEnterInCash.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtEnterInCash.setText("Enter in Amount of Cash");
+		txtEnterInCash.addKeyListener(new KeyAdapter() {
+			   public void keyTyped(KeyEvent e) {
+			      char c = e.getKeyChar();
+			      if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+			    	  if ((c == '.')&&(bootlegFormatting2== 0)) {
+			    		  bootlegFormatting2 ++;
+			    	  } else {
+			         e.consume();  // ignore event
+			    	  }
+			      }
+			   }
+			});
 		txtEnterInCash.setBounds(471, 288, 174, 41);
 		cashOutPanel.add(txtEnterInCash);
 		txtEnterInCash.setColumns(10);
@@ -771,6 +784,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 			cash = Double.parseDouble(txtEnterInCash.getText());
 			textField_1.setText(formatter.format(cash-total));
+			bootlegFormatting2 = 0;
 			tables[numOfTable].clearTable();
 			}
 		});
@@ -809,6 +823,16 @@ public class gui {
 		});
 		ClearTip.setBounds(35, 178, 158, 52);
 		cashOutPanel.add(ClearTip);
+		
+		JButton clearCash = new JButton("Clear Cash ");
+		clearCash.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txtEnterInCash.setText("");
+				bootlegFormatting2 = 0;
+			}
+		});
+		clearCash.setBounds(350, 346, 139, 41);
+		cashOutPanel.add(clearCash);
 		
 		layeredPane1.add(burgerScreen, "name_357597043214500");
 		burgerScreen.setLayout(null);
