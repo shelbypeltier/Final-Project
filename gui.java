@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
@@ -106,6 +107,8 @@ public class gui {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		
 		for(int i=0;i < numOfTables ;i++) {
 		tables[i] = new Table(i+1);
 		}
@@ -214,7 +217,7 @@ public class gui {
 			tempDrink.defaultDrink();
 			tempSalad.defaultSalad(); 
 			tempSides.defaultSides(); 
-			txtTest.setText(tables[numOfTable].getTotalBill()+"");
+			txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 			textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -233,9 +236,9 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				textField.setText(tables[numOfTable].getTotalBill()+"");
-				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
+				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
+				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
 			}
 		});
 		panel_3.add(btnNewButton_1);
@@ -267,7 +270,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
-				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -284,9 +287,9 @@ public class gui {
 				panelSwitcher(addFoodPanel);
 				panelSwitcher1(cashOutPanel);
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				textField.setText(tables[numOfTable].getTotalBill()+"");
-				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
+				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
+				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
 			}
 		});
 		panel_3_1.add(btnNewButton_1_1);
@@ -318,7 +321,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
-				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -335,9 +338,9 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				textField.setText(tables[numOfTable].getTotalBill()+"");
-				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
+				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
+				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
 			}
 		});
 		panel_3_2.add(btnNewButton_1_2);
@@ -369,7 +372,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
-				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -386,9 +389,9 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				textField.setText(tables[numOfTable].getTotalBill()+"");
-				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
+				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
+				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
 			}
 		});
 		panel_3_3.add(btnNewButton_1_3);
@@ -420,7 +423,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides();
-				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -437,9 +440,9 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				textField.setText(tables[numOfTable].getTotalBill()+"");
-				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
+				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
+				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
 			}
 		});
 		panel_3_4.add(btnNewButton_1_4);
@@ -471,7 +474,7 @@ public class gui {
 				tempDrink.defaultDrink();
 				tempSalad.defaultSalad(); 
 				tempSides.defaultSides(); 
-				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textArea.setText(tables[numOfTable].toString());
 			}
 		});
@@ -488,9 +491,9 @@ public class gui {
 				panelSwitcher1(cashOutPanel);
 				panelSwitcher(addFoodPanel);
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
-				textField.setText(tables[numOfTable].getTotalBill()+"");
-				textField_2.setText(tables[numOfTable].getTotalBill()*.072+"");
+				txtTest.setText(formatter.format((tables[numOfTable].getTotalBill()))+"");
+				textField.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				textField_2.setText(formatter.format(tables[numOfTable].getTotalBill()*.072+tables[numOfTable].getTotalBill())+"");
 			}
 		});
 		panel_3_5.add(btnNewButton_1_5);
@@ -604,7 +607,7 @@ public class gui {
 		cashOutPanel.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_10_1 = new JLabel("Tax: ");
+		JLabel lblNewLabel_10_1 = new JLabel("Total with Tax: ");
 		lblNewLabel_10_1.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel_10_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_10_1.setBounds(134, 109, 343, 52);
@@ -654,11 +657,7 @@ public class gui {
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(506, 166, 139, 41);
-//		textField_3.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				textField_3 = new JTextField(tables[numOfTable].getTotalBill()*.072 + "");
-//			}
-//		});
+		
 		cashOutPanel.add(textField_3);
 		
 		textField_4 = new JTextField();
@@ -666,7 +665,7 @@ public class gui {
 		textField_4.setColumns(10);
 		textField_4.setBounds(506, 221, 139, 41);
 		cashOutPanel.add(textField_4);
-		
+		//textField_4.setText(""+formatter.format((Double.parseDouble(textField_2.getText())+Double.parseDouble(textField_3.getText()))));
 		JButton btnNewButton_9 = new JButton("Cash Out");
 		btnNewButton_9.setBounds(506, 346, 139, 41);
 		cashOutPanel.add(btnNewButton_9);
@@ -1122,7 +1121,7 @@ public class gui {
 				burger.add(new Burgers(tempBurger.getNumOfPatties(),tempBurger.getTypeOfCheese(),tempBurger.getBunType(),tempBurger.getTomato(),tempBurger.getLettuce(),tempBurger.getOnion(),tempBurger.getPickle(),tempBurger.getMayo(),tempBurger.getKetchup(),tempBurger.getGrilledOnion(),tempBurger.getMustard()));
 				tables[numOfTable].addFood(burger.get(numOfBurgers));
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				tempBurger.defaultBurger();
 				numOfBurgers ++;
 				}
@@ -1339,7 +1338,7 @@ public class gui {
 				chickenTender.add(new ChickenTenders(tempChickenTenders.getSauce(), tempChickenTenders.getNumOfTenders()));
 				tables[numOfTable].addFood(chickenTender.get(numOfChickenTender));
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				tempChickenTenders.defaultTenders();
 				numOfChickenTender ++;
 				}
@@ -1592,16 +1591,12 @@ public class gui {
 		sidesPanel.add(btnNewButton_13_3);
 		btnNewButton_13_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (tempSides.getName().equals("")) {
-					textArea.append("Please Select A Side\n");
-				} else {
 				sides.add(new Sides(tempSides.getName()));
 				tables[numOfTable].addFood(sides.get(numOfSides));
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				tempSides.defaultSides();
 				numOfSides ++;
-				}
 			}
 		});
 		saladPanel.setLayout(null);
@@ -1922,8 +1917,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				salad.add(new Salad(tempSalad.getTomato(),tempSalad.getCarrot(),tempSalad.getCucumber(),tempSalad.getOnion(),tempSalad.getCheese(),tempSalad.getCrouton(),tempSalad.getDressing()));
 				tables[numOfTable].addFood(salad.get(numOfSalads));
-				tempSalad.defaultSalad();
-				txtTest.setText(tables[numOfTable].getTotalBill() + "");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				textArea.setText(tables[numOfTable].toString());
 				numOfSalads ++;
 			}
@@ -1959,7 +1953,7 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				if(!(tempDrink.getSize().equalsIgnoreCase("regular"))) {
 					tempDrink.setSize("regular");
-					textArea.append("Regular Selected\n");
+					textArea.append("Regular Selected ");
 					}
 					else {
 						tempDrink.setSize("");
@@ -2133,18 +2127,14 @@ public class gui {
 		drinksPanel.add(btnNewButton_13_1);
 		btnNewButton_13_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (tempDrink.getSize().equals("")) {
-					textArea.append("Please Select a Size\n");
-				} else if (tempDrink.getName().equals("")) {
-					textArea.append("Please Select a Drink\n");
-				} else {
-					drink.add(new Drinks(tempDrink.getName(),tempDrink.getSize()));
-					tables[numOfTable].addFood(drink.get(numOfDrink));
-					tempDrink.defaultDrink();
-					textArea.setText(tables[numOfTable].toString());
-					txtTest.setText(tables[numOfTable].getTotalBill() + "");
-					numOfDrink ++;
+				if (tempDrink.getSize().equalsIgnoreCase("")) {
+					textArea.append("Please select a size\n");
 				}
+				drink.add(new Drinks(tempDrink.getName(),tempDrink.getSize()));
+				tables[numOfTable].addFood(drink.get(numOfDrink));
+				textArea.setText(tables[numOfTable].toString());
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
+				numOfDrink ++;
 			}
 		});
 		
@@ -2272,16 +2262,11 @@ public class gui {
 		dessertPanel.add(btnNewButton_13);
 		btnNewButton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (tempDessert.getName().equals("")) {
-					textArea.append("Please Select A Dessert\n");
-				} else {
 				dessert.add(new Dessert(tempDessert.getName()));
 				tables[numOfTable].addFood(dessert.get(numOfDessert));
-				tempDessert.defaultDessert();
 				textArea.setText(tables[numOfTable].toString());
-				txtTest.setText(tables[numOfTable].getTotalBill()+"");
+				txtTest.setText(formatter.format(tables[numOfTable].getTotalBill())+"");
 				numOfDessert++;
-				}
 			}
 		});
 		
