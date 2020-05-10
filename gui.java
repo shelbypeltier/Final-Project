@@ -2448,7 +2448,7 @@ public class gui {
 				} else if (tables[numOfTable].getLength() == 1) {
 					textArea.append("Order Must Have At Least One Item\n");
 				} else {
-				tables[numOfTable].removeFood(removeFood);
+				tables[numOfTable].removeFood(removeFood-1);
 				textArea.setText(tables[numOfTable].toString());
 				txtTest.setText(tables[numOfTable].getTotalBill()+"");
 				}
